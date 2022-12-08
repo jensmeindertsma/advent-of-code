@@ -1,4 +1,4 @@
 # Advent of Code
 
-These are my solutions to the programming problems and challenges contained
-in the Advent of Code event.
+Can you feel the Christmas lights sparkle? Can you hear the boots walking through
+the snow? Can you smell the delicious holiday season dinner?
