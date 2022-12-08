@@ -22,4 +22,13 @@ fn calculate_calories(input: &str) -> u32 {
 }
 
 #[cfg(test)]
-mod tests {}
+mod tests {
+    use day_01::TEST_INPUT;
+
+    use super::calculate_calories;
+
+    #[test]
+    fn example_list() {
+        assert_eq!(calculate_calories(TEST_INPUT), 24000)
+    }
+}
