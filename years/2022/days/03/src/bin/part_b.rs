@@ -1,3 +1,5 @@
+#![feature(iter_array_chunks)]
+
 use std::collections::HashMap;
 use std::fs;
 
@@ -6,7 +8,7 @@ fn main() {
 
     let sum = calculate_priorities(&input);
 
-    println!("Sum of priorities: {}", sum);
+    println!("Sum of priorities: {sum}");
 }
 
 fn calculate_priorities(input: &str) -> usize {
@@ -18,16 +20,14 @@ fn calculate_priorities(input: &str) -> usize {
 
     input
         .lines()
-        .map(|line| {
-            let (first, second) = line.split_at(line.len() / 2);
-            assert_eq!(first.len(), second.len());
-
-            let common_character = first
+        .array_chunks::<3>()
+        .map(|[first, second, third]| {
+            let common = first
                 .chars()
-                .find(|character| second.contains(*character))
+                .find(|character| second.contains(*character) && third.contains(*character))
                 .unwrap();
 
-            letter_scores.get(&common_character).unwrap()
+            letter_scores.get(&common).unwrap()
         })
         .sum()
 }
@@ -40,6 +40,6 @@ mod tests {
 
     #[test]
     fn example_list() {
-        assert_eq!(calculate_priorities(TEST_INPUT), 157)
+        assert_eq!(calculate_priorities(TEST_INPUT), 70)
     }
 }
