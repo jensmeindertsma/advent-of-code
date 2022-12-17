@@ -2,3 +2,6 @@
 name = "day_09"
 version = "0.1.0"
 edition = "2021"
+
+[dependencies]
+lending-iterator = "0.1.6"
