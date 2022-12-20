@@ -13,7 +13,12 @@ fn main() {
 fn measure_monkey_business(input: &str) -> usize {
     let mut monkeys: Vec<Monkey> = input.split("\n\n").map(Monkey::from_description).collect();
 
-    for round in 1..=20 {
+    let monkey_collective_power = monkeys
+        .iter()
+        .map(|m| m.test.check.value())
+        .product::<usize>();
+
+    for round in 1..=10000 {
         println!("--- STARTING ROUND {round} ---");
 
         for monkey_position in 0..monkeys.len() {
@@ -67,11 +72,7 @@ fn measure_monkey_business(input: &str) -> usize {
                     },
                 };
 
-                item.worry_level = (item.worry_level as f64 / 3.0).floor() as usize;
-                println!(
-                    "Monkey gets bored with item. Worry level is divided by 3 to {}.",
-                    item.worry_level
-                );
+                item.worry_level %= monkey_collective_power;
 
                 let target = match monkey.test.check.check(item.worry_level) {
                     true => monkey.test.truthy_target,
@@ -226,6 +227,14 @@ enum Check {
 }
 
 impl Check {
+    fn value(&self) -> usize {
+        match self {
+            Self::DivisibleBy(amount) => *amount,
+        }
+    }
+}
+
+impl Check {
     fn check(&self, value: usize) -> bool {
         match self {
             Self::DivisibleBy(amount) => value % amount == 0,
@@ -241,6 +250,6 @@ mod tests {
 
     #[test]
     fn test_input() {
-        assert_eq!(measure_monkey_business(TEST_INPUT), 10605)
+        assert_eq!(measure_monkey_business(TEST_INPUT), 2713310158)
     }
 }
