@@ -1,6 +1,6 @@
 #![feature(iter_next_chunk)]
 
-use day_12::{Map, Pathfinder};
+use day_12::{map::Map, pathfinder::Pathfinder};
 use std::fs;
 
 fn main() {
@@ -16,7 +16,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
-    use day_12::{Map, Pathfinder, TEST_INPUT};
+    use day_12::{map::Map, pathfinder::Pathfinder, TEST_INPUT};
 
     #[test]
     fn test_input() {
