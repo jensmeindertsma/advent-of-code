@@ -1,4 +1,3 @@
 # Advent of Code
 
-Can you feel the Christmas lights sparkle? Can you hear the boots walking through
-the snow? Can you smell the delicious holiday season dinner?
+Let's see how I fare taking on Advent Of Code for the first time!

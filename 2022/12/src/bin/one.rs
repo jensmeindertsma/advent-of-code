@@ -9,9 +9,9 @@ fn main() {
     let map = Map::from(input.as_str());
     let pathfinder = Pathfinder::from(&map);
 
-    let steps = pathfinder.run();
+    let path = pathfinder.run();
 
-    println!("Minimum amount of steps required: {steps}");
+    println!("Minimum amount of steps required: {}", path.len());
 }
 
 #[cfg(test)]
@@ -23,6 +23,6 @@ mod tests {
         let map = Map::from(TEST_INPUT);
         let pathfinder = Pathfinder::from(&map);
 
-        assert_eq!(pathfinder.run(), 31)
+        assert_eq!(pathfinder.run().len(), 31)
     }
 }
