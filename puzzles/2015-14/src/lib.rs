@@ -1,0 +1,39 @@
+pub fn part_1(input: &str) -> usize {
+    let reindeer: Vec<Reindeer> = input
+        .trim()
+        .lines()
+        .map(|line| reindeer(line.trim()).unwrap().1)
+        .collect();
+
+    // TODO: parse reindeer
+    // start a second loop, where each second we update the state of the reindeer,
+    // State::Resting(time_remaining),
+    // State::Flying(time_remaining),
+    // .fly() will fly for one second and update a scoreboard with distances
+}
+
+struct Reindeer {
+    speed: usize,
+    state: State,
+}
+
+enum State {
+    Flying { time_remaining: usize },
+    Resting { time_remaining: usize },
+}
+
+fn reindeer(input: &str) -> nom::IResult<&str, Reindeer> {
+    
+}
+
+#[cfg(test)]
+mod tests {
+    const INPUT: &str = include_str!("../input.txt");
+
+    #[test]
+    fn part_1() {
+        use crate::part_1;
+
+        assert_eq!(part_1(INPUT), 2696);
+    }
+}
