@@ -5,6 +5,8 @@ pub fn part_1(input: &str) -> usize {
         .map(|line| reindeer(line.trim()).unwrap().1)
         .collect();
 
+    todo!()
+
     // TODO: parse reindeer
     // start a second loop, where each second we update the state of the reindeer,
     // State::Resting(time_remaining),
@@ -23,7 +25,7 @@ enum State {
 }
 
 fn reindeer(input: &str) -> nom::IResult<&str, Reindeer> {
-    
+    todo!()
 }
 
 #[cfg(test)]
