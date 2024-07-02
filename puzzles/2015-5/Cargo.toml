@@ -1,7 +1,0 @@
-[package]
-name = "puzzle-2015-5"
-edition = "2021"
-
-[dependencies]
-advent-of-code = { workspace = true }
-itertools = "0.13.0"
