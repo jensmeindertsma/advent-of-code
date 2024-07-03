@@ -11,9 +11,9 @@ dependencies = [
 
 [[package]]
 name = "either"
-version = "1.12.0"
+version = "1.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3dca9240753cf90908d7e4aac30f630662b02aebaa1b58a3cadabdb23385b58b"
+checksum = "60b1af1c220855b6ceac025d3f6ecdd2b7c4894bfe9cd9bda4fbb4bc7c0d4cf0"
 
 [[package]]
 name = "itertools"
@@ -38,9 +38,9 @@ checksum = "490cc448043f947bae3cbee9c203358d62dbee0db12107a74be5c30ccfd09771"
 
 [[package]]
 name = "memchr"
-version = "2.7.2"
+version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c8640c5d730cb13ebd907d8d04b52f55ac9a2eec55b440c8892f40d56c76c1d"
+checksum = "78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3"
 
 [[package]]
 name = "minimal-lexical"
@@ -66,18 +66,82 @@ checksum = "caff54706df99d2a78a5a4e3455ff45448d81ef1bb63c22cd14052ca0e993a3f"
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.84"
+version = "1.0.86"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec96c6a92621310b51366f1e28d05ef11489516e93be030060e5fc12024a49d6"
+checksum = "5e719e8df665df0d1c8fbfd238015744736151d4445ec0836b8e628aae103b77"
 dependencies = [
  "unicode-ident",
 ]
 
 [[package]]
-name = "puzzle-2015-1"
+name = "puzzle-2015-01"
 version = "0.0.0"
 dependencies = [
  "advent-of-code",
+]
+
+[[package]]
+name = "puzzle-2015-02"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "nom",
+]
+
+[[package]]
+name = "puzzle-2015-03"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+]
+
+[[package]]
+name = "puzzle-2015-04"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "md5",
+]
+
+[[package]]
+name = "puzzle-2015-05"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "itertools",
+]
+
+[[package]]
+name = "puzzle-2015-06"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "nom",
+]
+
+[[package]]
+name = "puzzle-2015-07"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "nom",
+]
+
+[[package]]
+name = "puzzle-2015-08"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "nom",
+]
+
+[[package]]
+name = "puzzle-2015-09"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "itertools",
+ "nom",
 ]
 
 [[package]]
@@ -119,70 +183,6 @@ name = "puzzle-2015-14"
 version = "0.0.0"
 dependencies = [
  "advent-of-code",
- "nom",
-]
-
-[[package]]
-name = "puzzle-2015-2"
-version = "0.0.0"
-dependencies = [
- "advent-of-code",
- "nom",
-]
-
-[[package]]
-name = "puzzle-2015-3"
-version = "0.0.0"
-dependencies = [
- "advent-of-code",
-]
-
-[[package]]
-name = "puzzle-2015-4"
-version = "0.0.0"
-dependencies = [
- "advent-of-code",
- "md5",
-]
-
-[[package]]
-name = "puzzle-2015-5"
-version = "0.0.0"
-dependencies = [
- "advent-of-code",
- "itertools",
-]
-
-[[package]]
-name = "puzzle-2015-6"
-version = "0.0.0"
-dependencies = [
- "advent-of-code",
- "nom",
-]
-
-[[package]]
-name = "puzzle-2015-7"
-version = "0.0.0"
-dependencies = [
- "advent-of-code",
- "nom",
-]
-
-[[package]]
-name = "puzzle-2015-8"
-version = "0.0.0"
-dependencies = [
- "advent-of-code",
- "nom",
-]
-
-[[package]]
-name = "puzzle-2015-9"
-version = "0.0.0"
-dependencies = [
- "advent-of-code",
- "itertools",
  "nom",
 ]
 
@@ -230,9 +230,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.117"
+version = "1.0.118"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "455182ea6142b14f93f4bc5320a2b31c1f266b66a4a5c858b013302a5d8cbfc3"
+checksum = "d947f6b3163d8857ea16c4fa0dd4840d52f3041039a85decd46867eb1abef2e4"
 dependencies = [
  "itoa",
  "ryu",
@@ -241,9 +241,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.66"
+version = "2.0.68"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c42f3f41a2de00b01c0aaad383c5a45241efc8b2d1eda5661812fda5f3cdcff5"
+checksum = "901fa70d88b9d6c98022e23b4136f9f3e54e4662c3bc1bd1d84a42a9a0f0c1e9"
 dependencies = [
  "proc-macro2",
  "quote",

@@ -2,7 +2,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -22,8 +25,12 @@
         with pkgs; {
           devShells.default = mkShell {
             packages = [
-              toolchain
+              alejandra
+              cargo-nextest
+              just
+              nil
               rust-analyzer-unwrapped
+              toolchain
             ];
 
             RUST_SRC_PATH = "${toolchain}/lib/rustlib/src/rust/library";
