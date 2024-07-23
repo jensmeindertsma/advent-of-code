@@ -3,6 +3,3 @@
 
 # Cargo
 /target/
-
-# direnv
-/.direnv/
