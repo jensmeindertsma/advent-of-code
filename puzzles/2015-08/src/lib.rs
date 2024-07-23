@@ -62,7 +62,7 @@ impl Measurable for &str {
             map(anychar, |_| 1)(input)
         }
 
-        let string = self.strip_prefix("\"").unwrap().strip_suffix("\"").unwrap();
+        let string = self.strip_prefix('"').unwrap().strip_suffix('"').unwrap();
 
         let (_, numbers) =
             many0(alt((backslash, hexadecimal, double_quote, character)))(string).unwrap();

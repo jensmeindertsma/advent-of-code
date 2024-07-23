@@ -1,4 +1,5 @@
-default: test-all
+help:
+    just --list
 test year day:
     cargo nextest run --release --no-fail-fast --final-status-level all --package puzzle-{{year}}-{{day}}
 test-all:
