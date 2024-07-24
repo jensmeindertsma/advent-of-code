@@ -1,7 +1,6 @@
 [package]
-name = "puzzle-2015-10"
+name = "puzzle-2015-15"
 edition = "2021"
 
 [dependencies]
 advent-of-code.workspace = true
-nom.workspace = true

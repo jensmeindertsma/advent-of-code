@@ -3,4 +3,4 @@ name = "puzzle-template"
 edition = "2021"
 
 [dependencies]
-advent-of-code = { workspace = true }
+advent-of-code.workspace = true
