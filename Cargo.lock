@@ -191,6 +191,8 @@ name = "puzzle-2015-15"
 version = "0.0.0"
 dependencies = [
  "advent-of-code",
+ "itertools",
+ "nom",
 ]
 
 [[package]]
