@@ -18,7 +18,7 @@ pub fn ingredient(input: &str) -> IResult<&str, Ingredient> {
             property("calories"),
         )),
         |(name, capacity, durability, flavor, texture, calories)| Ingredient {
-            name,
+            _name: name,
             capacity,
             durability,
             flavor,
