@@ -1,31 +1,19 @@
 mod parsing;
 
 use itertools::Itertools;
-use std::{collections::HashMap, str::FromStr};
+use std::str::FromStr;
 
 pub fn part_1(input: &str) -> usize {
-    input
+    let c = input
         .trim()
         .lines()
         .map(|line| line.trim())
         .map(|line| line.parse::<Ingredient>().unwrap())
         .combinations_with_replacement(100)
         .enumerate()
-        .for_each(|(n, recipe)| {
-            let mut ingredients = HashMap::new();
+        .count();
 
-            for ingredient in recipe {
-                ingredients
-                    .entry(ingredient.name)
-                    .and_modify(|n| *n += 1)
-                    .or_insert(1);
-            }
-
-            println!("--- Recipe {n} ---");
-            for (name, count) in ingredients {
-                println!("{name} = {count}")
-            }
-        });
+    println!("{c:?}");
 
     todo!()
 }

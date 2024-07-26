@@ -8,7 +8,7 @@ fn main() {
         day: 15,
         part_1: |input: &str| {
             Answer::new(part_1(input), |answer| {
-                format!("the input has a length of {answer}")
+                format!("the highest scoring cookie scores {answer}")
             })
         },
         part_2: |_input: &str| None,
