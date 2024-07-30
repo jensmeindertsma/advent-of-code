@@ -4,3 +4,4 @@ edition = "2021"
 
 [dependencies]
 advent-of-code.workspace = true
+nom.workspace = true
