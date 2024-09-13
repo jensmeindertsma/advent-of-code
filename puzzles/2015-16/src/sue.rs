@@ -95,7 +95,7 @@ mod parsing {
             .map_err(|s: Err<Error<&str>>| s.map_input(|f| f.to_owned()))
     }
 
-    fn property<'a>(name: &'a str) -> impl FnMut(&'a str) -> IResult<&str, u8> {
+    fn property<'a>(name: &'a str) -> impl FnMut(&'a str) -> IResult<&'a str, u8> {
         move |input: &'a str| {
             map(
                 tuple((

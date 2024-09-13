@@ -37,7 +37,7 @@ fn name(input: &str) -> IResult<&str, String> {
 
 fn property<'a>(
     name: &'a str,
-) -> impl FnMut(&'a str) -> std::result::Result<(&'a str, i8), nom::Err<nom::error::Error<&str>>> {
+) -> impl FnMut(&'a str) -> std::result::Result<(&'a str, i8), nom::Err<nom::error::Error<&'a str>>> {
     move |input: &'a str| {
         map(
             tuple((tag(format!("{name} ").as_str()), value, opt(tag(", ")))),
