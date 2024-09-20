@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["crates/*", "puzzles/*"]
+members = ["crates/*", "puzzles/template", "puzzles/2015/*"]
 
 [workspace.dependencies]
 advent-of-code = { path = "./crates/advent-of-code" }

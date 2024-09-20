@@ -21,7 +21,8 @@ pub fn part_1(input: &str) -> usize {
 }
 
 pub fn part_2(input: &str) -> usize {
-    let (mut replacements, target_molecule) = parse_input(input);
+    let (replacements, mut molecule) = parse_input(input);
+    let mut steps = 0;
 
     todo!()
 }
