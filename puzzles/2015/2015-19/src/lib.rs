@@ -20,13 +20,6 @@ pub fn part_1(input: &str) -> usize {
     created_molecules.len()
 }
 
-pub fn part_2(input: &str) -> usize {
-    let (replacements, mut molecule) = parse_input(input);
-    let mut steps = 0;
-
-    todo!()
-}
-
 fn parse_input(input: &str) -> (Vec<(String, String)>, String) {
     input
         .split_once("\n\n")
@@ -35,7 +28,6 @@ fn parse_input(input: &str) -> (Vec<(String, String)>, String) {
                 replacements
                     .trim()
                     .lines()
-                    .map(|l| l.trim())
                     .map(|l| parse_replacement(l).unwrap())
                     .collect(),
                 molecule.trim().to_owned(),
@@ -89,40 +81,40 @@ mod tests {
         assert_eq!(part_1(INPUT), 576);
     }
 
-    #[test]
-    fn part_2() {
-        use crate::part_2;
+    // #[test]
+    // fn part_2() {
+    //     use crate::part_2;
 
-        assert_eq!(
-            part_2(
-                "
-                e => H
-                e => O
-                H => HO
-                H => OH
-                O => HH
+    //     assert_eq!(
+    //         part_2(
+    //             "
+    //             e => H
+    //             e => O
+    //             H => HO
+    //             H => OH
+    //             O => HH
 
-                HOH
-                "
-            ),
-            3
-        );
+    //             HOH
+    //             "
+    //         ),
+    //         3
+    //     );
 
-        assert_eq!(
-            part_2(
-                "
-                e => H
-                e => O
-                H => HO
-                H => OH
-                O => HH
+    //     assert_eq!(
+    //         part_2(
+    //             "
+    //             e => H
+    //             e => O
+    //             H => HO
+    //             H => OH
+    //             O => HH
 
-                HOHOHO
-                "
-            ),
-            6
-        );
+    //             HOHOHO
+    //             "
+    //         ),
+    //         6
+    //     );
 
-        //assert_eq!(part_1(INPUT), 576);
-    }
+    //     assert_eq!(part_2(INPUT), ???);
+    // }
 }

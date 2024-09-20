@@ -1,5 +1,5 @@
 use advent_of_code::{Answer, Puzzle};
-use puzzle_2015_19::{part_1, part_2};
+use puzzle_2015_19::part_1;
 
 fn main() {
     Puzzle {
@@ -11,11 +11,7 @@ fn main() {
                 format!("{answer} distinct molecules can be created")
             })
         },
-        part_2: |input: &str| {
-            Some(Answer::new(part_2(input), |answer| {
-                format!("the fewest number of steps is {answer}")
-            }))
-        },
+        part_2: |_input: &str| None,
     }
     .solve(include_str!("../input.txt"))
 }
