@@ -1,5 +1,5 @@
 [package]
-name = "puzzle-2015-04"
+name = "puzzle-2016-05"
 edition = "2021"
 
 [dependencies]

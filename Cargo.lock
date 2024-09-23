@@ -259,6 +259,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2016-05"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "md5",
+]
+
+[[package]]
 name = "puzzle-template"
 version = "0.0.0"
 dependencies = [

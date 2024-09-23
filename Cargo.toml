@@ -5,4 +5,5 @@ members = ["crates/*", "puzzles/template", "puzzles/2015/*", "puzzles/2016/*"]
 [workspace.dependencies]
 advent-of-code = { path = "./crates/advent-of-code" }
 itertools = "0.13.0"
+md5 = "0.7.0"
 nom = "7.1.3"
