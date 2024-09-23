@@ -20,6 +20,12 @@ pub fn part_1(input: &str) -> usize {
     created_molecules.len()
 }
 
+pub fn part_2(input: &str) -> usize {
+    let (_replacements, _molecule) = parse_input(input);
+
+    todo!("implement part 2")
+}
+
 fn parse_input(input: &str) -> (Vec<(String, String)>, String) {
     input
         .split_once("\n\n")
@@ -28,20 +34,17 @@ fn parse_input(input: &str) -> (Vec<(String, String)>, String) {
                 replacements
                     .trim()
                     .lines()
-                    .map(|l| parse_replacement(l).unwrap())
+                    .map(|l| {
+                        l.trim()
+                            .split_once(" => ")
+                            .map(|(a, b)| (a.to_owned(), b.to_owned()))
+                            .unwrap()
+                    })
                     .collect(),
                 molecule.trim().to_owned(),
             )
         })
         .unwrap()
-}
-
-fn parse_replacement(string: &str) -> Result<(String, String), ()> {
-    string
-        .trim()
-        .split_once(" => ")
-        .map(|(a, b)| (a.to_owned(), b.to_owned()))
-        .ok_or(())
 }
 
 #[cfg(test)]
@@ -81,40 +84,40 @@ mod tests {
         assert_eq!(part_1(INPUT), 576);
     }
 
-    // #[test]
-    // fn part_2() {
-    //     use crate::part_2;
+    #[test]
+    fn part_2() {
+        use crate::part_2;
 
-    //     assert_eq!(
-    //         part_2(
-    //             "
-    //             e => H
-    //             e => O
-    //             H => HO
-    //             H => OH
-    //             O => HH
+        assert_eq!(
+            part_2(
+                "
+                e => H
+                e => O
+                H => HO
+                H => OH
+                O => HH
 
-    //             HOH
-    //             "
-    //         ),
-    //         3
-    //     );
+                HOH
+                "
+            ),
+            3
+        );
 
-    //     assert_eq!(
-    //         part_2(
-    //             "
-    //             e => H
-    //             e => O
-    //             H => HO
-    //             H => OH
-    //             O => HH
+        assert_eq!(
+            part_2(
+                "
+                e => H
+                e => O
+                H => HO
+                H => OH
+                O => HH
 
-    //             HOHOHO
-    //             "
-    //         ),
-    //         6
-    //     );
+                HOHOHO
+                "
+            ),
+            6
+        );
 
-    //     assert_eq!(part_2(INPUT), ???);
-    // }
+        // assert_eq!(part_2(INPUT), ???);
+    }
 }

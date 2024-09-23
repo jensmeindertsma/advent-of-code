@@ -1,0 +1,8 @@
+[package]
+name = "puzzle-2016-04"
+edition = "2021"
+
+[dependencies]
+advent-of-code.workspace = true
+itertools.workspace = true
+nom.workspace = true
