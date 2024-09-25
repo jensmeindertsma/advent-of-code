@@ -1,0 +1,6 @@
+[package]
+name = "puzzle-2015-20"
+edition = "2021"
+
+[dependencies]
+advent-of-code.workspace = true

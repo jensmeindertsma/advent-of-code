@@ -228,6 +228,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2015-20"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+]
+
+[[package]]
 name = "puzzle-2016-01"
 version = "0.0.0"
 dependencies = [
