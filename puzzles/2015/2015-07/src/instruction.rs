@@ -46,7 +46,7 @@ impl<'a> From<Wire<'a>> for Value<'a> {
     }
 }
 
-impl<'a> From<u16> for Value<'a> {
+impl From<u16> for Value<'_> {
     fn from(signal: u16) -> Self {
         Self::Signal(signal)
     }
