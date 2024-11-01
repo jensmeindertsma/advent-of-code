@@ -290,6 +290,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2017-02"
+version = "0.0.0"
+dependencies = [
+ "advent-of-code",
+ "itertools",
+]
+
+[[package]]
 name = "puzzle-template"
 version = "0.0.0"
 dependencies = [
