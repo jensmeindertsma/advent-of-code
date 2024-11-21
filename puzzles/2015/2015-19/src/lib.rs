@@ -5,12 +5,12 @@ pub fn part_1(input: &str) -> usize {
 
     let mut created_molecules: HashSet<String> = HashSet::new();
 
-    for (old, new) in replacements {
-        for (index, part) in molecule.match_indices(&old) {
+    for (small, big) in replacements {
+        for (index, part) in molecule.match_indices(&small) {
             let mut new_molecule = String::new();
 
             new_molecule.push_str(&molecule[0..index]);
-            new_molecule.push_str(&new);
+            new_molecule.push_str(&big);
             new_molecule.push_str(&molecule[index + part.len()..molecule.len()]);
 
             created_molecules.insert(new_molecule);
@@ -21,9 +21,30 @@ pub fn part_1(input: &str) -> usize {
 }
 
 pub fn part_2(input: &str) -> usize {
-    let (_replacements, _molecule) = parse_input(input);
+    let (mut replacements, mut molecule) = parse_input(input);
+    replacements.sort_by(|(_, a), (_, b)| b.len().cmp(&a.len()));
+    let mut steps = 0;
 
-    todo!("implement part 2")
+    while molecule != "e" {
+        println!("step = {steps}, molecule = {molecule}");
+        let mut reduced = false;
+
+        for (small, big) in &replacements {
+            if let Some(pos) = molecule.find(big) {
+                println!("{big} => {small}");
+                molecule.replace_range(pos..(pos + big.len()), small);
+                steps += 1;
+                reduced = true;
+                break; // Restart the loop after applying a rule
+            }
+        }
+
+        if !reduced {
+            panic!("stuck!"); // No applicable rule, reduction is impossible
+        }
+    }
+
+    steps
 }
 
 fn parse_input(input: &str) -> (Vec<(String, String)>, String) {
