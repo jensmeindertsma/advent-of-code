@@ -1,21 +1,55 @@
-use advent_of_code::{Answer, Puzzle};
-use puzzle_2015_01::{part_1, part_2};
+mod common;
+mod part_1;
+mod part_2;
+
+use ornament::{Puzzle, Solution};
+use part_1::part_1;
+use part_2::part_2;
 
 fn main() {
     Puzzle {
-        title: "Not Quite Lisp",
-        year: 2015,
-        day: 1,
-        part_1: |input: &str| {
-            Answer::new(part_1(input), |answer| {
+        name: "Not Quite Lisp",
+        part_1: |input| {
+            Solution::new(part_1, input, |answer| {
                 format!("the instructions take Santa to floor {answer}")
             })
         },
-        part_2: |input: &str| {
-            Some(Answer::new(part_2(input), |answer| {
-                format!("character {answer} first takes Santa to the basement",)
+        part_2: |input| {
+            Some(Solution::new(part_2, input, |answer| {
+                format!("Santa first entered the basement at position {answer}")
             }))
         },
     }
     .solve(include_str!("../input.txt"))
+}
+
+#[cfg(test)]
+mod tests {
+    const INPUT: &str = include_str!("../input.txt");
+
+    #[test]
+    fn part_1() {
+        use super::part_1;
+
+        assert_eq!(part_1("(())"), 0);
+        assert_eq!(part_1("()()"), 0);
+        assert_eq!(part_1("((("), 3);
+        assert_eq!(part_1("(()(()("), 3);
+        assert_eq!(part_1("))((((("), 3);
+        assert_eq!(part_1("())"), -1);
+        assert_eq!(part_1("))("), -1);
+        assert_eq!(part_1(")))"), -3);
+        assert_eq!(part_1(")())())"), -3);
+
+        assert_eq!(part_1(INPUT), 138);
+    }
+
+    #[test]
+    fn part_2() {
+        use super::part_2;
+
+        assert_eq!(part_2(")"), 1);
+        assert_eq!(part_2("()())"), 5);
+        assert_eq!(part_2(INPUT), 1771);
+    }
 }

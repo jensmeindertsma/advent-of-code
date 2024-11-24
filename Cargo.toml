@@ -1,15 +1,6 @@
 [workspace]
 resolver = "2"
-members = [
-    "crates/*",
-    "puzzles/template",
-    "puzzles/2015/*",
-    "puzzles/2016/*",
-    "puzzles/2017/*",
-]
+members = ["crates/*", "puzzles/2015/*"]
 
 [workspace.dependencies]
-advent-of-code = { path = "./crates/advent-of-code" }
-itertools = "0.13.0"
-md5 = "0.7.0"
-nom = "7.1.3"
+ornament = { path = "./crates/ornament" }

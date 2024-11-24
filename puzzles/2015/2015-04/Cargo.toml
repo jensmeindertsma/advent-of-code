@@ -1,7 +1,0 @@
-[package]
-name = "puzzle-2015-04"
-edition = "2021"
-
-[dependencies]
-advent-of-code.workspace = true
-md5.workspace = true

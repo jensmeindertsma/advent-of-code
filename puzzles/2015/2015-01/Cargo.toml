@@ -2,5 +2,9 @@
 name = "puzzle-2015-01"
 edition = "2021"
 
+[[bin]]
+path = "src/main.rs"
+name = "2015-01"
+
 [dependencies]
-advent-of-code.workspace = true
+ornament.workspace = true
