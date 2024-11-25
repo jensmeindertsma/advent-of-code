@@ -16,12 +16,11 @@ fn main() {
                 format!("the instructions take Santa to floor {answer}")
             })
         },
-        // part_2: Some(|input| {
-        //     Solution::new(part_2, input, |answer| {
-        //         format!("Santa first entered the basement at position {answer}")
-        //     })
-        // }),
-        part_2: None,
+        part_2: Some(|input| {
+            Solution::new(part_2, input, |answer| {
+                format!("Santa first entered the basement at position {answer}")
+            })
+        }),
     }
     .solve(include_str!("../input.txt"))
 }
