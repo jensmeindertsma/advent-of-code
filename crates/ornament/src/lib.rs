@@ -25,7 +25,7 @@ impl Puzzle {
         let solution = (self.part_1)(input);
 
         table.add_row(vec![
-            Cell::new("Part 1"),
+            Cell::new("Part 1").add_attribute(Attribute::Bold),
             Cell::new(format!("\"{}\"", solution.answer)).add_attribute(Attribute::Italic),
             Cell::new(format!("{}μs", solution.time.as_micros())),
         ]);
@@ -34,13 +34,17 @@ impl Puzzle {
             Some(f) => {
                 let solution = f(input);
                 table.add_row(vec![
-                    Cell::new("Part 2"),
+                    Cell::new("Part 2").add_attribute(Attribute::Bold),
                     Cell::new(format!("\"{}\"", solution.answer)).add_attribute(Attribute::Italic),
                     Cell::new(format!("{}μs", solution.time.as_micros())),
                 ]);
             }
             None => {
-                table.add_row(vec!["Part 2", "🎄 unsolved .?. 🎅", "🎁"]);
+                table.add_row(vec![
+                    Cell::new("Part 2").add_attribute(Attribute::Bold),
+                    Cell::new("🎄 unsolved .?. 🎅"),
+                    Cell::new("🎁"),
+                ]);
             }
         }
 
