@@ -1,43 +1,50 @@
+use comfy_table::{Attribute, Cell, Table};
+use owo_colors::OwoColorize;
 use std::fmt::Display;
 use std::time::{Duration, Instant};
 
-pub struct Puzzle<Part1, Part2>
-where
-    Part1: FnOnce(&str) -> Solution,
-    Part2: FnOnce(&str) -> Option<Solution>,
-{
+pub struct Puzzle {
     pub name: &'static str,
-    pub part_1: Part1,
-    pub part_2: Part2,
+    pub year: usize,
+    pub day: usize,
+    pub part_1: fn(&str) -> Solution,
+    pub part_2: Option<fn(&str) -> Solution>,
 }
 
-impl<Part1, Part2> Puzzle<Part1, Part2>
-where
-    Part1: FnOnce(&str) -> Solution,
-    Part2: FnOnce(&str) -> Option<Solution>,
-{
+impl Puzzle {
     pub fn solve(self, input: &str) {
-        println!("Solving puzzle: {}", self.name);
+        let mut table = Table::new();
+        table.load_preset("││──├─┼┤│─┼├┤┬┴┌┐└┘");
+
+        table.set_header(vec![
+            Cell::new(format!("{}-{:0>2}", self.year, self.day)).add_attribute(Attribute::Bold),
+            Cell::new("Answer 🌟").add_attribute(Attribute::Bold),
+            Cell::new("Time ⌛").add_attribute(Attribute::Bold),
+        ]);
 
         let solution = (self.part_1)(input);
-        println!(
-            "Part 1: {} (took {}us)",
-            solution.answer,
-            solution.time.as_micros()
-        );
 
-        match (self.part_2)(input) {
-            Some(solution) => {
-                println!(
-                    "Part 2: {} (took {}us)",
-                    solution.answer,
-                    solution.time.as_micros()
-                );
+        table.add_row(vec![
+            Cell::new("Part 1"),
+            Cell::new(format!("\"{}\"", solution.answer)).add_attribute(Attribute::Italic),
+            Cell::new(format!("{}μs", solution.time.as_micros())),
+        ]);
+
+        match self.part_2 {
+            Some(f) => {
+                let solution = f(input);
+                table.add_row(vec![
+                    Cell::new("Part 2"),
+                    Cell::new(format!("\"{}\"", solution.answer)).add_attribute(Attribute::Italic),
+                    Cell::new(format!("{}μs", solution.time.as_micros())),
+                ]);
             }
             None => {
-                println!("Part 2: TODO")
+                table.add_row(vec!["Part 2", "🎄 unsolved .?. 🎅", "🎁"]);
             }
         }
+
+        println!("{table}");
     }
 }
 
@@ -47,19 +54,18 @@ pub struct Solution {
 }
 
 impl Solution {
-    pub fn new<S, A, F>(solver: S, input: &str, formatter: F) -> Self
-    where
-        S: FnOnce(&str) -> A,
-        A: Display,
-        F: FnOnce(&str) -> String,
-    {
+    pub fn new<Answer: Display>(
+        solver: fn(&str) -> Answer,
+        input: &str,
+        formatter: fn(&str) -> String,
+    ) -> Self {
         let time = Instant::now();
         let answer = solver(input);
         let time = time.elapsed();
 
         Self {
-            answer: formatter(&answer.to_string()),
             time,
+            answer: formatter(&format!("`{}`", answer.to_string().bold())),
         }
     }
 }
