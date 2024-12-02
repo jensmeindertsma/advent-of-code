@@ -1,6 +1,9 @@
 help:
     just --list
 
+solve puzzle:
+    cargo run --release --package puzzle-{{puzzle}}
+
 test puzzle="":
     #!/usr/bin/env bash
     if [ -n "{{puzzle}}" ]; then
