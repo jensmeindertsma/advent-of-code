@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["crates/*", "puzzles/2015/*"]
+members = ["crates/*", "puzzles/template", "puzzles/2015/*"]
 
 [workspace.dependencies]
 ornament = { path = "./crates/ornament" }
