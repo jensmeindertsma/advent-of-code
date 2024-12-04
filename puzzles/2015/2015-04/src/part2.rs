@@ -1,6 +1,6 @@
 use md5::{Digest, Md5};
 
-pub fn part_1(input: &str) -> usize {
+pub fn part_2(input: &str) -> usize {
     let input = input.trim();
 
     (0..)
@@ -14,7 +14,7 @@ pub fn part_1(input: &str) -> usize {
 
             (n, hash)
         })
-        .find(|(_, hash)| hash.starts_with("00000"))
+        .find(|(_, hash)| hash.starts_with("000000"))
         .map(|(n, _)| n)
         .unwrap()
 }
