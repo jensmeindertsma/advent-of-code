@@ -2,7 +2,7 @@ help:
     just --list
 
 debug puzzle:
-    cargo nextest run --package puzzle-{{puzzle}}
+    cargo run --package puzzle-{{puzzle}}
 
 solve puzzle:
     cargo run --release --package puzzle-{{puzzle}}
