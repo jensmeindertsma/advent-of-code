@@ -35,7 +35,7 @@ impl Puzzle {
                 let solution = f(input);
                 table.add_row(vec![
                     Cell::new("Part 2").add_attribute(Attribute::Bold),
-                    Cell::new(format!("\"{}\"", solution.answer)).add_attribute(Attribute::Italic),
+                    Cell::new(format!("\"{}\"", solution.answer)),
                     Cell::new(format_time(solution.time)),
                 ]);
             }
