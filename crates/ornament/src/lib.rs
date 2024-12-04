@@ -26,7 +26,7 @@ impl Puzzle {
 
         table.add_row(vec![
             Cell::new("Part 1").add_attribute(Attribute::Bold),
-            Cell::new(format!("\"{}\"", solution.answer)).add_attribute(Attribute::Italic),
+            Cell::new(format!("\"{}\"", solution.answer)),
             Cell::new(format_time(solution.time)),
         ]);
 
@@ -79,7 +79,7 @@ impl Solution {
 
         Self {
             time,
-            answer: formatter(&format!("`{}`", answer.to_string().bold())),
+            answer: formatter(&format!("{}", answer.to_string().bold())),
         }
     }
 }
