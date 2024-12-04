@@ -27,7 +27,7 @@ impl Puzzle {
         table.add_row(vec![
             Cell::new("Part 1").add_attribute(Attribute::Bold),
             Cell::new(format!("\"{}\"", solution.answer)).add_attribute(Attribute::Italic),
-            Cell::new(format!("{}μs", solution.time.as_micros())),
+            Cell::new(format_time(solution.time)),
         ]);
 
         match self.part_2 {
@@ -36,7 +36,7 @@ impl Puzzle {
                 table.add_row(vec![
                     Cell::new("Part 2").add_attribute(Attribute::Bold),
                     Cell::new(format!("\"{}\"", solution.answer)).add_attribute(Attribute::Italic),
-                    Cell::new(format!("{}μs", solution.time.as_micros())),
+                    Cell::new(format_time(solution.time)),
                 ]);
             }
             None => {
@@ -49,6 +49,16 @@ impl Puzzle {
         }
 
         println!("{table}");
+    }
+}
+
+fn format_time(time: Duration) -> String {
+    if time.as_micros() < 1000 {
+        format!("{}μs", time.as_micros())
+    } else if time.as_millis() < 1000 {
+        format!("{:.1}ms", time.as_micros() as f64 / 1000.0)
+    } else {
+        format!("{:.2}s", time.as_micros())
     }
 }
 
