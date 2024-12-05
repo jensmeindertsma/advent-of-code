@@ -9,14 +9,20 @@ pub use part2::part_2;
 mod tests {
     const INPUT: &str = include_str!("../input.txt");
 
-    #[test]
-    fn part_1() {
-        use super::part_1;
+    mod part_1 {
+        use crate::part_1;
+        use super::INPUT;
 
-        assert_eq!(part_1("abcdef"), 609043);
-        assert_eq!(part_1("pqrstuv"), 1048970);
+        #[test]
+        fn examples() {
+            assert_eq!(part_1("abcdef"), 609043);
+            assert_eq!(part_1("pqrstuv"), 1048970);
+        }
 
-        assert_eq!(part_1(INPUT), 254575);
+        #[test]
+        fn solution() {
+            assert_eq!(part_1(INPUT), 254575);
+        }
     }
 
     #[test]
