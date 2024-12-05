@@ -12,3 +12,4 @@
 | 6   | [Probably a Fire Hazard](puzzles/2015/2015-06/)                 | ✅     | ✅     |
 | 7   | [Some Assembly Required](puzzles/2015/2015-07/)                 | ✅     | ✅     |
 | 8   | [Matchsticks](puzzles/2015/2015-08/)                            | ✅     | ✅     |
+| 9   | [All in a Single Night](puzzles/2015/2015-09/)                  | ✅     | ✅     |

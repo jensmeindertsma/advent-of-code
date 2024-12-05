@@ -18,8 +18,8 @@ impl Puzzle {
 
         table.set_header(vec![
             Cell::new(format!("{}-{:0>2}", self.year, self.day)).add_attribute(Attribute::Bold),
-            Cell::new("Answer 🌟").add_attribute(Attribute::Bold),
-            Cell::new("Time ⌛").add_attribute(Attribute::Bold),
+            Cell::new(self.name).add_attribute(Attribute::Bold),
+            Cell::new("Time").add_attribute(Attribute::Bold),
         ]);
 
         let solution = (self.part_1)(input);
