@@ -1,6 +1,9 @@
 help:
     just --list
 
+check:
+    cargo clippy
+
 debug puzzle:
     cargo run --package puzzle-{{puzzle}}
 
