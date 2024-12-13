@@ -13,3 +13,4 @@
 | 7   | [Some Assembly Required](puzzles/2015/2015-07/)                 | ✅     | ✅     |
 | 8   | [Matchsticks](puzzles/2015/2015-08/)                            | ✅     | ✅     |
 | 9   | [All in a Single Night](puzzles/2015/2015-09/)                  | ✅     | ✅     |
+| 10  | [Elves Look, Elves Say](puzzles/2015/2015-10/)                  | ✅     | ✅     |
