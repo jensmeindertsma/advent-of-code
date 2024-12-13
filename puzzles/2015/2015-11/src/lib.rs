@@ -13,13 +13,13 @@ mod tests {
     fn part_1() {
         use super::part_1;
 
-        assert_eq!(part_1(INPUT), 254575);
+        assert_eq!(part_1(INPUT), "hepxxyzz");
     }
 
     #[test]
     fn part_2() {
         use super::part_2;
 
-        assert_eq!(part_2(INPUT), 1038736);
+        assert_eq!(part_2(INPUT), "heqaabcc");
     }
 }
