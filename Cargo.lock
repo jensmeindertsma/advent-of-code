@@ -377,6 +377,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2015-12"
+version = "0.0.0"
+dependencies = [
+ "ornament",
+ "serde_json",
+]
+
+[[package]]
 name = "puzzle-template"
 version = "0.0.0"
 dependencies = [
