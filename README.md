@@ -15,3 +15,5 @@
 | 9   | [All in a Single Night](puzzles/2015/2015-09/)                  | ✅     | ✅     |
 | 10  | [Elves Look, Elves Say](puzzles/2015/2015-10/)                  | ✅     | ✅     |
 | 11  | [Corporate Policy](puzzles/2015/2015-11/)                       | ✅     | ✅     |
+| 12  | [JSAbacusFramework.io](puzzles/2015/2015-12/)                   | ✅     | ✅     |
+| 13  | [Knights of the Dinner Table](puzzles/2015/2015-13/)            | ✅     | ✅     |
