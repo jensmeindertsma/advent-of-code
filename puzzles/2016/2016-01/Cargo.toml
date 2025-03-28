@@ -1,6 +1,0 @@
-[package]
-name = "puzzle-2016-01"
-edition = "2021"
-
-[dependencies]
-ornament.workspace = true

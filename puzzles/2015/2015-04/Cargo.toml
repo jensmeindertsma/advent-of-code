@@ -3,6 +3,6 @@ name = "puzzle-2015-04"
 edition = "2021"
 
 [dependencies]
-hex = "0.4.3"
-md-5 = "0.10.6"
+hex.workspace = true
+md-5.workspace = true
 ornament.workspace = true

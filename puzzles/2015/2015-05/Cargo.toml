@@ -3,5 +3,5 @@ name = "puzzle-2015-05"
 edition = "2021"
 
 [dependencies]
-itertools = "0.13.0"
+itertools.workspace = true
 ornament.workspace = true
