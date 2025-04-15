@@ -1,14 +1,14 @@
 help:
     just --list
 
-check *FLAGS:
-    cargo clippy {{FLAGS}}
+check:
+    cargo clippy
 
 debug puzzle:
     cargo run --package puzzle-{{puzzle}}
 
-format *FLAGS:
-    cargo fmt --all {{FLAGS}}
+format:
+    cargo fmt --all
 
 solve puzzle:
     cargo run --release --package puzzle-{{puzzle}}
