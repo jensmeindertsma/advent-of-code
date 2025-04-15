@@ -7,6 +7,9 @@ check:
 debug puzzle:
     cargo run --package puzzle-{{puzzle}}
 
+format *FLAGS:
+    cargo fmt --all {{FLAGS}}
+
 solve puzzle:
     cargo run --release --package puzzle-{{puzzle}}
 
