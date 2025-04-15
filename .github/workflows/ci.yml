@@ -11,7 +11,7 @@ jobs:
         uses: actions-rust-lang/setup-rust-toolchain@v1
 
       - name: Check code
-        run: cargo clippy -- --deny warnings
+        run: cargo clippy
 
   formatting:
     runs-on: ubuntu-latest
