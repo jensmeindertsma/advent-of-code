@@ -1,8 +1,8 @@
 help:
     just --list
 
-check:
-    cargo clippy
+check *FLAGS:
+    cargo clippy {{FLAGS}}
 
 debug puzzle:
     cargo run --package puzzle-{{puzzle}}
