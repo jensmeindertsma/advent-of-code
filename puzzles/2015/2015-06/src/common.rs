@@ -5,7 +5,7 @@ use nom::{
     bytes::complete::tag,
     character::complete::digit1,
     combinator::{map, map_res},
-    sequence::tuple,
+    Parser,
 };
 
 pub struct Instruction {
@@ -37,7 +37,7 @@ impl FromStr for Instruction {
 
 fn instruction(input: &str) -> nom::IResult<&str, Instruction> {
     map(
-        tuple((
+        (
             alt((
                 map(tag("turn on"), |_| InstructionKind::Enable),
                 map(tag("turn off"), |_| InstructionKind::Disable),
@@ -47,18 +47,20 @@ fn instruction(input: &str) -> nom::IResult<&str, Instruction> {
             location,
             tag(" through "),
             location,
-        )),
+        ),
         |(kind, _, from, _, to)| Instruction { kind, from, to },
-    )(input)
+    )
+    .parse(input)
 }
 
 fn location(input: &str) -> nom::IResult<&str, Location> {
     map(
-        tuple((
+        (
             map_res(digit1, |s: &str| s.parse()),
             tag(","),
             map_res(digit1, |s: &str| s.parse()),
-        )),
+        ),
         |(x, _, y)| Location { x, y },
-    )(input)
+    )
+    .parse(input)
 }

@@ -4,7 +4,7 @@ use nom::{
     character::complete::anychar,
     combinator::map,
     multi::many0,
-    sequence::tuple,
+    Parser,
 };
 
 pub fn part_1(input: &str) -> usize {
@@ -30,31 +30,33 @@ impl Measurable for &str {
 
     fn memory_length(&self) -> usize {
         fn backslash(input: &str) -> nom::IResult<&str, usize> {
-            map(tag("\\\\"), |_| 1)(input)
+            map(tag("\\\\"), |_| 1).parse(input)
         }
 
         fn hexadecimal(input: &str) -> nom::IResult<&str, usize> {
             map(
-                tuple((
+                (
                     tag("\\x"),
                     take_while_m_n(2, 2, |c: char| c.is_ascii_hexdigit()),
-                )),
+                ),
                 |_| 1,
-            )(input)
+            )
+            .parse(input)
         }
 
         fn double_quote(input: &str) -> nom::IResult<&str, usize> {
-            map(tag("\\\""), |_| 1)(input)
+            map(tag("\\\""), |_| 1).parse(input)
         }
 
         fn character(input: &str) -> nom::IResult<&str, usize> {
-            map(anychar, |_| 1)(input)
+            map(anychar, |_| 1).parse(input)
         }
 
         let string = self.strip_prefix('"').unwrap().strip_suffix('"').unwrap();
 
-        let (_, numbers) =
-            many0(alt((backslash, hexadecimal, double_quote, character)))(string).unwrap();
+        let (_, numbers) = many0(alt((backslash, hexadecimal, double_quote, character)))
+            .parse(string)
+            .unwrap();
 
         numbers.iter().sum::<usize>()
     }
