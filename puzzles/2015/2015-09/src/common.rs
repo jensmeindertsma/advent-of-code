@@ -1,6 +1,7 @@
 use std::{collections::HashMap, ops::Deref, str::FromStr};
 
 use itertools::Itertools;
+use nom::Parser;
 
 pub struct Router {
     network: HashMap<Location, HashMap<Location, Distance>>,
@@ -58,23 +59,24 @@ impl FromStr for Route {
             bytes::complete::tag,
             character::complete::{alpha1, digit1},
             combinator::{map, map_res},
-            sequence::tuple,
         };
 
         fn location(input: &str) -> nom::IResult<&str, Location> {
             map(alpha1, |name: &str| Location {
                 name: name.to_string(),
-            })(input)
+            })
+            .parse(input)
         }
 
-        let (_, (origin, _, destination, _, distance)) = tuple((
+        let (_, (origin, _, destination, _, distance)) = (
             location,
             tag(" to "),
             location,
             tag(" = "),
             map_res(digit1, |s: &str| s.parse()),
-        ))(string)
-        .map_err(|_| string.to_string())?;
+        )
+            .parse(string)
+            .map_err(|_| string.to_string())?;
 
         Ok(Self {
             origin,
