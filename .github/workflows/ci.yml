@@ -13,10 +13,7 @@ jobs:
         uses: extractions/setup-just@v2
 
       - name: Setup Rust toolchain
-        uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: nightly
-          components: clippy, rustfmt
+        run: rustup toolchain install
 
       - name: Check code
         run: just check
@@ -31,10 +28,7 @@ jobs:
         uses: extractions/setup-just@v2
 
       - name: Setup Rust toolchain
-        uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: nightly
-          components: clippy, rustfmt
+        run: rustup toolchain install
 
       - name: Check formatting
         run: just format-check
@@ -49,10 +43,7 @@ jobs:
         uses: extractions/setup-just@v2
 
       - name: Setup Rust toolchain
-        uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: nightly
-          components: clippy, rustfmt
+        run: rustup toolchain install
 
       - name: Install cargo-nextest
         uses: taiki-e/install-action@v2
