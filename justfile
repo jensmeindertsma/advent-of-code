@@ -17,4 +17,3 @@ test puzzle="":
     else
         cargo nextest run --release
     fi
-
