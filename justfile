@@ -10,6 +10,9 @@ debug puzzle:
 format:
     cargo fmt --all
 
+format-check:
+    cargo fmt --all --check
+
 solve puzzle:
     cargo run --release --package puzzle-{{puzzle}}
 
