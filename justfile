@@ -14,7 +14,7 @@ format-check:
     cargo fmt --all --check
 
 solve puzzle:
-    cargo run --release --package puzzle-{{puzzle}}
+    cargo run --release --quiet --package puzzle-{{puzzle}}
 
 test puzzle:
     cargo nextest run --release --package puzzle-{{puzzle}}
