@@ -17,3 +17,4 @@
 | 11  | [Corporate Policy](puzzles/2015/2015-11/)                       | ✅     | ✅     |
 | 12  | [JSAbacusFramework.io](puzzles/2015/2015-12/)                   | ✅     | ✅     |
 | 13  | [Knights of the Dinner Table](puzzles/2015/2015-13/)            | ✅     | ✅     |
+| 14  | [Reindeer Olympics](puzzles/2015/2015-14/)                      | ✅     | ✅     |
