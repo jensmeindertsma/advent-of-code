@@ -1,5 +1,5 @@
 use ornament::{Puzzle, Solution};
-use puzzle_2015_14::part_1;
+use puzzle_2015_14::{part_1, part_2};
 
 fn main() {
     Puzzle {
@@ -13,7 +13,13 @@ fn main() {
                 |answer| format!("the winning reindeer traveled {answer} kilometers"),
             )
         },
-        part_2: None,
+        part_2: Some(|input| {
+            Solution::new(
+                |input| part_2(input, 2503),
+                input,
+                |answer| format!("the winning reindeer has {answer} points"),
+            )
+        }),
     }
     .solve(include_str!("../input.txt"))
 }

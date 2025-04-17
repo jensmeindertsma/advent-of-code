@@ -1,7 +1,8 @@
-use crate::reindeer::{Reindeer, State};
 use std::collections::HashMap;
 
-pub fn part_1(input: &str, seconds: u16) -> u16 {
+use crate::reindeer::{Reindeer, State};
+
+pub fn part_2(input: &str, seconds: u16) -> u16 {
     let mut reindeer_list: Vec<Reindeer> = input
         .trim()
         .lines()
@@ -9,6 +10,7 @@ pub fn part_1(input: &str, seconds: u16) -> u16 {
         .collect();
 
     let mut distances = HashMap::new();
+    let mut scoreboard = HashMap::new();
 
     for _ in 0..seconds {
         for reindeer in &mut reindeer_list {
@@ -34,7 +36,15 @@ pub fn part_1(input: &str, seconds: u16) -> u16 {
                 }
             }
         }
+
+        let leader_distance = *distances.values().max().unwrap();
+
+        distances
+            .iter_mut()
+            .filter(|(_, distance)| **distance == leader_distance)
+            .map(|(name, _)| *name)
+            .for_each(|name| *scoreboard.entry(name).or_insert(0) += 1);
     }
 
-    distances.into_values().max().unwrap()
+    scoreboard.into_values().max().unwrap()
 }
