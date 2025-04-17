@@ -18,3 +18,4 @@
 | 12  | [JSAbacusFramework.io](puzzles/2015/2015-12/)                   | ✅     | ✅     |
 | 13  | [Knights of the Dinner Table](puzzles/2015/2015-13/)            | ✅     | ✅     |
 | 14  | [Reindeer Olympics](puzzles/2015/2015-14/)                      | ✅     | ✅     |
+| 15  | [Science for Hungry People](puzzles/2015/2015-15/)              | ✅     | ✅     |
