@@ -1,6 +1,19 @@
 [workspace]
 resolver = "2"
-members = ["crates/*", "puzzles/template", "puzzles/2015/*"]
+members = [
+    "crates/*",
+    "puzzles/template",
+    "puzzles/2015/*",
+    #"puzzles/2016/*",
+    #"puzzles/2017/*",
+    #"puzzles/2018/*",
+    #"puzzles/2019/*",
+    #"puzzles/2020/*",
+    #"puzzles/2021/*",
+    #"puzzles/2022/*",
+    #"puzzles/2023/*",
+    #"puzzles/2024/*",
+]
 
 [workspace.dependencies]
 hex = "0.4.3"
