@@ -1,5 +1,7 @@
 # Advent of Code
 
+Rust is kinda my thing, lol!
+
 ## 2015
 
 | Day | Puzzle                                                          | Part 1 | Part 2 |
