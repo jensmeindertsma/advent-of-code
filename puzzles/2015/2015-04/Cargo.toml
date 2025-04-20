@@ -1,6 +1,6 @@
 [package]
 name = "puzzle-2015-04"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 hex.workspace = true
