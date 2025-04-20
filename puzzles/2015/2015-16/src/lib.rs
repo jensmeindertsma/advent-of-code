@@ -1,7 +1,6 @@
 mod part1;
 
 pub use part1::part_1;
-pub use part2::part_2;
 
 #[cfg(test)]
 mod tests {

@@ -1,5 +1,5 @@
 use ornament::{Puzzle, Solution};
-use puzzle_2015_14::{part_1, part_2};
+use puzzle_2015_16::part_1;
 
 fn main() {
     Puzzle {
@@ -7,11 +7,9 @@ fn main() {
         year: 2015,
         day: 16,
         part_1: |input| {
-            Solution::new(
-                |input| part_1(input, 2503),
-                input,
-                |answer| format!("the number of Sue is {answer}"),
-            )
+            Solution::new(part_1, input, |answer| {
+                format!("the number of Sue is {answer}")
+            })
         },
         part_2: None,
     }
