@@ -21,7 +21,7 @@ Rust is kinda my thing, lol!
 | 13  | [Knights of the Dinner Table](puzzles/2015/2015-13/)            | ✅     | ✅     |
 | 14  | [Reindeer Olympics](puzzles/2015/2015-14/)                      | ✅     | ✅     |
 | 15  | Science for Hungry People                                       | ❌     | ❌     |
-| 16  | [Aunt Sue](puzzles/2015/2015-16/)                               | ❌     | ❌     |
+| 16  | [Aunt Sue](puzzles/2015/2015-16/)                               | ✅     | ❌     |
 | 17  | No Such Thing as Too Much                                       | ❌     | ❌     |
 | 18  | Like a GIF For Your Yard                                        | ❌     | ❌     |
 | 19  | Medicine for Rudolph                                            | ❌     | ❌     |
