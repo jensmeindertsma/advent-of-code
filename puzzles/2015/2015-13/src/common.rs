@@ -9,10 +9,10 @@ use nom::{
 pub struct Relation {
     pub person: String,
     pub neighbor: String,
-    pub delta: isize,
+    pub delta: i16,
 }
 
-pub fn relation(input: &str) -> nom::IResult<&str, Relation> {
+pub fn parse_relation(input: &str) -> nom::IResult<&str, Relation> {
     map(
         (
             alpha1,
@@ -20,10 +20,10 @@ pub fn relation(input: &str) -> nom::IResult<&str, Relation> {
             map(
                 (
                     alt((
-                        (tag("gain "), map_res(digit1, |s: &str| s.parse::<isize>())),
+                        (tag("gain "), map_res(digit1, |s: &str| s.parse::<i16>())),
                         (
                             tag("lose "),
-                            map_res(digit1, |s: &str| s.parse::<isize>().map(|i| -i)),
+                            map_res(digit1, |s: &str| s.parse::<i16>().map(|i| -i)),
                         ),
                     )),
                     tag(" happiness units"),

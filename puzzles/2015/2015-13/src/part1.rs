@@ -1,15 +1,15 @@
-use crate::common::relation;
+use crate::common::parse_relation;
 use itertools::Itertools;
 use std::collections::HashMap;
 
-pub fn part_1(input: &str) -> isize {
+pub fn part_1(input: &str) -> i16 {
     let relations = input
         .trim()
         .lines()
-        .map(|line| relation(line.trim()).unwrap().1)
+        .map(|line| parse_relation(line.trim()).unwrap().1)
         .fold(
             HashMap::new(),
-            |mut relations: HashMap<String, HashMap<String, isize>>, relation| {
+            |mut relations: HashMap<String, HashMap<String, i16>>, relation| {
                 relations
                     .entry(relation.person)
                     .or_default()
