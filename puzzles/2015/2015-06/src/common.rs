@@ -1,11 +1,11 @@
 use std::str::FromStr;
 
 use nom::{
+    Parser,
     branch::alt,
     bytes::complete::tag,
     character::complete::digit1,
     combinator::{map, map_res},
-    Parser,
 };
 
 pub struct Instruction {
