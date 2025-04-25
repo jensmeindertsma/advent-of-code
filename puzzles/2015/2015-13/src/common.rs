@@ -1,9 +1,9 @@
 use nom::{
+    Parser,
     branch::alt,
     bytes::complete::tag,
     character::complete::{alpha1, digit1},
     combinator::{map, map_res},
-    Parser,
 };
 
 pub struct Relation {

@@ -1,6 +1,6 @@
 [package]
 name = "puzzle-2015-11"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 itertools.workspace = true
