@@ -23,7 +23,7 @@ Rust is kinda my thing, lol!
 | 15  | Science for Hungry People                                       | ❌     | ❌     |
 | 16  | Aunt Sue                                                        | ❌     | ❌     |
 | 17  | No Such Thing as Too Much                                       | ❌     | ❌     |
-| 18  | Like a GIF For Your Yard                                        | ❌     | ❌     |
+| 18  | [Like a GIF For Your Yard](puzzles/2015/2015-18)                | ❌     | ❌     |
 | 19  | Medicine for Rudolph                                            | ❌     | ❌     |
 | 20  | Infinite Elves and Infinite Houses                              | ❌     | ❌     |
 | 21  | RPG Simulator 20XX                                              | ❌     | ❌     |
