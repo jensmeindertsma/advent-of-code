@@ -55,12 +55,12 @@ impl From<u16> for Value<'_> {
 mod parsing {
     use super::{Gate, Instruction, Value, Wire};
     use nom::{
+        Parser,
         branch::alt,
         bytes::complete::{tag, take_while1},
         character::complete::space0,
         combinator::{map, map_res},
         sequence::delimited,
-        Parser,
     };
 
     pub fn instruction(input: &str) -> nom::IResult<&str, Instruction> {

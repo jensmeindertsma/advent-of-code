@@ -1,10 +1,10 @@
 use nom::{
+    Parser,
     branch::alt,
     bytes::complete::{tag, take_while_m_n},
     character::complete::anychar,
     combinator::map,
     multi::many0,
-    Parser,
 };
 
 pub fn part_1(input: &str) -> usize {
