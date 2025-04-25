@@ -24,7 +24,7 @@ Rust is kinda my thing, lol!
 | 16  | Aunt Sue                                                        | ❌     | ❌     |
 | 17  | No Such Thing as Too Much                                       | ❌     | ❌     |
 | 18  | Like a GIF For Your Yard                                        | ❌     | ❌     |
-| 19  | Medicine for Rudolph                                            | ❌     | ❌     |
+| 19  | [Medicine for Rudolph](puzzles/2015/2015-19/)                   | ❌     | ❌     |
 | 20  | Infinite Elves and Infinite Houses                              | ❌     | ❌     |
 | 21  | RPG Simulator 20XX                                              | ❌     | ❌     |
 | 22  | Wizard Simulator 20XX                                           | ❌     | ❌     |
