@@ -5,8 +5,8 @@ pub struct Present {
 }
 
 impl Present {
-    pub fn from_dimensions(dimensions: &str) -> Self {
-        let mut dimensions = dimensions.split('x');
+    pub fn from_description(description: &str) -> Self {
+        let mut dimensions = description.split('x');
         let length = dimensions.next().unwrap().parse().unwrap();
         let width = dimensions.next().unwrap().parse().unwrap();
         let height = dimensions.next().unwrap().parse().unwrap();

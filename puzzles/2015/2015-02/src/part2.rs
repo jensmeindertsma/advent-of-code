@@ -4,7 +4,7 @@ pub fn part_2(input: &str) -> usize {
     input
         .trim()
         .lines()
-        .map(Present::from_dimensions)
+        .map(Present::from_description)
         .map(|present| {
             let perimeter = present
                 .sides()
