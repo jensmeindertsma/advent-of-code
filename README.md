@@ -4,7 +4,7 @@ Rust is kinda my thing, lol!
 
 ## Optimizations
 
-This branch is all about speeding up the implementations. My goal is to have every
+I'm all about speeding up the implementations. My goal is to have every
 puzzle be solved single-threadedly in under 500ms.
 
 For computation heavy puzzles like `2015-04` where hundreds of thousands of MD5 hashes have to be calculated, I cannot get the time to solve under 150ms without using manual multithreading. As much as I'd like to solve every puzzle in one-hundredths of a second, these kind of computations make that impossible. I was able to achieve 17ms performance by switching to manual multithreading (using `rayon` or `crossbeam` impact performance significantly making it slower than the single-threaded version). But I decided against using multi-threading for all the puzzles, because it complicates implementations where I'd like to focus on writing faster algorithms instead.
@@ -13,6 +13,8 @@ For computation heavy puzzles like `2015-04` where hundreds of thousands of MD5 
 
 - 2015-10 (300ms)
 - 2015-11 (165ms)
+
+Both of these puzzle implementation allocate many String heap objects instead of re-using one buffer (sacrificing the iterator approach for performance).
 
 ## 2015
 
