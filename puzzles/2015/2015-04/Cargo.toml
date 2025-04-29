@@ -4,5 +4,6 @@ edition = "2024"
 
 [dependencies]
 hex.workspace = true
-md-5.workspace = true
+itoa.workspace = true
+md5.workspace = true
 ornament.workspace = true
