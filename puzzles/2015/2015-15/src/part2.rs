@@ -3,7 +3,7 @@ use crate::{
     mixer::Mixer,
 };
 
-pub fn part_1(input: &str) -> usize {
+pub fn part_2(input: &str) -> usize {
     let ingredients: Vec<Ingredient> = input
         .trim()
         .lines()
@@ -19,9 +19,8 @@ pub fn part_1(input: &str) -> usize {
         let mut flavor: isize = 0;
         let mut texture: isize = 0;
 
-        // Iterate through the ingredients, multiplying by their "amount"
-        // as part of the current composition, and then add it to this cookie's
-        // total property value.
+        let mut calories: usize = 0;
+
         for (index, amount) in mix.iter().enumerate() {
             let ingredient = &ingredients[index];
 
@@ -29,12 +28,18 @@ pub fn part_1(input: &str) -> usize {
                 panic!("Mixer overloaded!")
             }
 
+            calories += ingredient.calories as usize * amount;
+
             let amount = *amount as isize;
 
             capacity += ingredient.capacity as isize * amount;
             durability += ingredient.durability as isize * amount;
             flavor += ingredient.flavor as isize * amount;
             texture += ingredient.texture as isize * amount;
+        }
+
+        if calories != 500 {
+            continue;
         }
 
         // `.max(0)` guarantees value is non-negative so casting to usize is safe.
