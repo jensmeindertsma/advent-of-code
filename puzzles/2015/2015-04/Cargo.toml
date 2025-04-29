@@ -3,9 +3,7 @@ name = "puzzle-2015-04"
 edition = "2024"
 
 [dependencies]
-crossbeam.workspace = true
 hex.workspace = true
 itoa.workspace = true
 md5.workspace = true
 ornament.workspace = true
-rayon.workspace = true

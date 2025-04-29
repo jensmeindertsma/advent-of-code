@@ -16,12 +16,10 @@ members = [
 ]
 
 [workspace.dependencies]
-crossbeam = "0.8.4"
 hex = "0.4.3"
 itertools = "0.14.0"
 itoa = "1.0.15"
 md5 = "0.7.0"
 nom = "8.0.0"
 ornament = { path = "./crates/ornament" }
-rayon = "1.10.0"
 serde_json = "1.0.140"

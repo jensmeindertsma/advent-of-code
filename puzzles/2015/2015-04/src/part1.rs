@@ -1,22 +1,24 @@
-pub fn part_1(_input: &str) -> u32 {
-    // let input = input.trim();
-    // let size = input.len();
+pub fn part_1(input: &str) -> u32 {
+    let input = input.trim();
+    let input_length = input.len();
 
-    // let mut buffer = [0u8; 64];
-    // buffer[..size].copy_from_slice(input.as_bytes());
+    let mut buffer = [0u8; 32];
+    buffer[..input_length].copy_from_slice(input.as_bytes());
 
-    // let mut formatting_buffer = itoa::Buffer::new();
-    // for number in 0.. {
-    //     let formatted_number = formatting_buffer.format(number);
+    let mut formatting_buffer = itoa::Buffer::new();
+    for number in 0.. {
+        let formatted_number_bytes = formatting_buffer.format(number).as_bytes();
+        let formatted_number_length = formatted_number_bytes.len();
 
-    //     // Compute MD5 hash directly on the slice
-    //     let digest = md5::compute(&buffer[..(size + formatted_number.len())]);
+        buffer[input_length..(input_length + formatted_number_length)]
+            .copy_from_slice(formatted_number_bytes);
 
-    //     if digest.0[0] == 0 && digest.0[1] == 0 && digest.0[2] & 0xF0 == 0 {
-    //         return number;
-    //     }
-    // }
+        let hash = md5::compute(&buffer[..(input_length + formatted_number_length)]).0;
 
-    // panic!("No solution!")
-    0
+        if hash[0] == 0 && hash[1] == 0 && (hash[2] & 0xF0) == 0 {
+            return number;
+        }
+    }
+
+    panic!("No solution!")
 }

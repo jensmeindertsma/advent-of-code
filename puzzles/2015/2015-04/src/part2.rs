@@ -1,45 +1,22 @@
-use md5::compute;
-use std::sync::{
-    Arc,
-    atomic::{AtomicBool, AtomicU32, Ordering},
-};
-
-const THREADS: usize = 8;
-
 pub fn part_2(input: &str) -> u32 {
-    let input_bytes = input.trim().as_bytes();
-    let found = Arc::new(AtomicBool::new(false));
-    let result = Arc::new(AtomicU32::new(0));
+    let input = input.trim();
+    let size = input.len();
 
-    crossbeam::scope(|s| {
-        for t in 0..THREADS {
-            let found = found.clone();
-            let result = result.clone();
-            s.spawn(move |_| {
-                let mut buffer = [0u8; 32];
-                let mut num_buf = itoa::Buffer::new();
+    let mut buffer = [0u8; 32];
+    buffer[..size].copy_from_slice(input.as_bytes());
 
-                let mut i = t as u32;
-                while !found.load(Ordering::Relaxed) {
-                    let num_bytes = num_buf.format(i).as_bytes();
-                    let total_len = input_bytes.len() + num_bytes.len();
+    let mut formatting_buffer = itoa::Buffer::new();
+    for number in 0.. {
+        let formatted_number_bytes = formatting_buffer.format(number).as_bytes();
 
-                    buffer[..input_bytes.len()].copy_from_slice(input_bytes);
-                    buffer[input_bytes.len()..total_len].copy_from_slice(num_bytes);
+        buffer[size..(size + formatted_number_bytes.len())].copy_from_slice(formatted_number_bytes);
 
-                    let hash = compute(&buffer[..total_len]).0;
-                    if hash[0] == 0 && hash[1] == 0 && hash[2] == 0 {
-                        found.store(true, Ordering::Relaxed);
-                        result.store(i, Ordering::Relaxed);
-                        break;
-                    }
+        let hash = md5::compute(&buffer[..(size + formatted_number_bytes.len())]).0;
 
-                    i += THREADS as u32;
-                }
-            });
+        if hash[0] == 0 && hash[1] == 0 && hash[2] == 0 {
+            return number;
         }
-    })
-    .unwrap();
+    }
 
-    result.load(Ordering::Relaxed)
+    panic!("No solution!")
 }
