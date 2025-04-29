@@ -1,4 +1,4 @@
-pub fn part_1(input: &str) -> u32 {
+pub fn part_1(_input: &str) -> u32 {
     // let input = input.trim();
     // let size = input.len();
 
