@@ -16,6 +16,7 @@ members = [
 ]
 
 [workspace.dependencies]
+crossbeam = "0.8.4"
 hex = "0.4.3"
 itertools = "0.14.0"
 itoa = "1.0.15"

@@ -1,38 +1,45 @@
-use itoa::Buffer;
-use rayon::prelude::*;
+use md5::compute;
+use std::sync::{
+    Arc,
+    atomic::{AtomicBool, AtomicU32, Ordering},
+};
+
+const THREADS: usize = 8;
 
 pub fn part_2(input: &str) -> u32 {
-    let input = input.trim();
-    let input_bytes = input.as_bytes();
-    let input_length = input.len();
+    let input_bytes = input.trim().as_bytes();
+    let found = Arc::new(AtomicBool::new(false));
+    let result = Arc::new(AtomicU32::new(0));
 
-    (0..u32::MAX)
-        .into_par_iter()
-        .find_any(|number| {
-            let mut buffer = [0u8; 32];
-            let mut formatting_buffer = Buffer::new();
-            let number_formatted_bytes = formatting_buffer.format(*number).as_bytes();
-            let total_length = input_length + number_formatted_bytes.len();
+    crossbeam::scope(|s| {
+        for t in 0..THREADS {
+            let found = found.clone();
+            let result = result.clone();
+            s.spawn(move |_| {
+                let mut buffer = [0u8; 32];
+                let mut num_buf = itoa::Buffer::new();
 
-            // buffer[..input_length].copy_from_slice(input_bytes);
-            // buffer[input_length..total_length].copy_from_slice(number_formatted_bytes);
+                let mut i = t as u32;
+                while !found.load(Ordering::Relaxed) {
+                    let num_bytes = num_buf.format(i).as_bytes();
+                    let total_len = input_bytes.len() + num_bytes.len();
 
-            unsafe {
-                std::ptr::copy_nonoverlapping(
-                    input_bytes.as_ptr(),
-                    buffer.as_mut_ptr(),
-                    input_length,
-                );
-                std::ptr::copy_nonoverlapping(
-                    number_formatted_bytes.as_ptr(),
-                    buffer.as_mut_ptr().add(input_length),
-                    number_formatted_bytes.len(),
-                );
-            }
+                    buffer[..input_bytes.len()].copy_from_slice(input_bytes);
+                    buffer[input_bytes.len()..total_len].copy_from_slice(num_bytes);
 
-            let hash = md5::compute(&buffer[..total_length]).0;
+                    let hash = compute(&buffer[..total_len]).0;
+                    if hash[0] == 0 && hash[1] == 0 && hash[2] == 0 {
+                        found.store(true, Ordering::Relaxed);
+                        result.store(i, Ordering::Relaxed);
+                        break;
+                    }
 
-            hash[0] == 0 && hash[1] == 0 && hash[2] == 0
-        })
-        .unwrap()
+                    i += THREADS as u32;
+                }
+            });
+        }
+    })
+    .unwrap();
+
+    result.load(Ordering::Relaxed)
 }
