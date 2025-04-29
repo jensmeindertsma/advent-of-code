@@ -1,4 +1,4 @@
-use crate::common::{Route, Router};
+use crate::router::{Route, Router};
 
 pub fn part_2(input: &str) -> usize {
     let routes = input.trim().lines().map(|line| {

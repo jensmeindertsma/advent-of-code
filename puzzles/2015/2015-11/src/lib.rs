@@ -1,4 +1,4 @@
-mod common;
+mod generator;
 mod part1;
 mod part2;
 

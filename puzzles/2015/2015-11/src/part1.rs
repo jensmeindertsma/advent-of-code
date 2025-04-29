@@ -1,4 +1,4 @@
-use crate::common::{PasswordGenerator, is_valid_password};
+use crate::generator::{PasswordGenerator, is_valid_password};
 
 pub fn part_1(input: &str) -> String {
     PasswordGenerator::new(input.trim())

@@ -1,4 +1,4 @@
-use crate::common::Present;
+use crate::present::Present;
 
 pub fn part_2(input: &str) -> usize {
     input

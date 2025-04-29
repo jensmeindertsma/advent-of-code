@@ -1,4 +1,4 @@
-use crate::common::generate_sequence;
+use crate::sequence::generate_sequence;
 
 pub fn part_2(input: &str) -> usize {
     let input = input.trim().to_owned();
