@@ -11,7 +11,6 @@ For computation heavy puzzles like `2015-04` where hundreds of thousands of MD5 
 
 ### Optimization Targets
 
-- 2015-10 (300ms)
 - 2015-11 (165ms)
 
 Both of these puzzle implementation allocate many String heap objects instead of re-using one buffer (sacrificing the iterator approach for performance).
