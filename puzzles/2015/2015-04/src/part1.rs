@@ -1,11 +1,13 @@
-use crate::common::Miner;
+use crate::hasher::Hasher;
 
 pub fn part_1(input: &str) -> usize {
-    for (n, hash) in Miner::new(input.trim()) {
-        if hash.starts_with("00000") {
-            return n;
+    let mut hasher = Hasher::new(input);
+
+    while let Some(hash) = hasher.next() {
+        if hash[0] == 0 && hash[1] == 0 && (hash[2] & 0xF0) == 0 {
+            return hasher.current_number();
         }
     }
 
-    panic!("failed to find solution")
+    panic!("No solution!")
 }

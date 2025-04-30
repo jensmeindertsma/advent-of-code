@@ -4,19 +4,13 @@ pub fn part_2(input: &str) -> usize {
         .lines()
         .map(|line| {
             let line = line.trim();
-            line.encode().len() - line.len()
+            encode(line).len() - line.len()
         })
         .sum()
 }
 
-trait Encodeable {
-    fn encode(&self) -> String;
-}
-
-impl Encodeable for &str {
-    fn encode(&self) -> String {
-        let mut string = self.to_string();
-        string = string.replace('\\', "\\\\");
-        format!("\"{}\"", string.replace('\"', "\\\""))
-    }
+fn encode(string: &str) -> String {
+    let mut string = string.to_string();
+    string = string.replace('\\', "\\\\");
+    format!("\"{}\"", string.replace('\"', "\\\""))
 }

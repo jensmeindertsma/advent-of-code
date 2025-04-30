@@ -1,8 +1,10 @@
-use crate::common::{PasswordGenerator, is_valid_password};
+use crate::generator::PasswordGenerator;
 
 pub fn part_2(input: &str) -> String {
-    PasswordGenerator::new(input.trim())
-        .filter(|p| is_valid_password(p))
-        .nth(1)
-        .unwrap()
+    let mut generator = PasswordGenerator::new(input);
+
+    // Ignore first password
+    let _ = generator.generate();
+
+    generator.generate()
 }

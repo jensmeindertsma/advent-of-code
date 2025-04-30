@@ -1,10 +1,10 @@
-use crate::common::Present;
+use crate::present::Present;
 
 pub fn part_1(input: &str) -> usize {
     input
         .trim()
         .lines()
-        .map(Present::from_dimensions)
+        .map(Present::from_description)
         .map(|present| {
             let areas = present.sides().map(|side| side.area());
 

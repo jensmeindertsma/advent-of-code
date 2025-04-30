@@ -3,6 +3,7 @@ use nom::{
     bytes::complete::{tag, take_while1},
     sequence::terminated,
 };
+use ornament::ParseError;
 
 #[derive(Debug)]
 pub struct Reindeer<'a> {
@@ -12,8 +13,6 @@ pub struct Reindeer<'a> {
     pub rest_time: u8,
     pub state: State,
 }
-
-type ParseError<'a> = nom::Err<nom::error::Error<&'a str>>;
 
 impl<'a> Reindeer<'a> {
     pub fn parse(input: &'a str) -> Result<Reindeer<'a>, ParseError<'a>> {
