@@ -1,9 +1,9 @@
 use nom::{
     bytes::complete::{tag, take_while1},
-    error::Error as NomParseError,
     sequence::terminated,
-    Err as NomError, IResult, Parser,
+    IResult, Parser,
 };
+use ornament::ParseError;
 
 #[derive(Debug)]
 pub struct Ingredient {
@@ -13,8 +13,6 @@ pub struct Ingredient {
     pub texture: i8,
     pub calories: u8,
 }
-
-type ParseError<'a> = NomError<NomParseError<&'a str>>;
 
 pub fn parse_ingredient(input: &str) -> Result<Ingredient, ParseError> {
     fn string(input: &str) -> IResult<&str, &str> {

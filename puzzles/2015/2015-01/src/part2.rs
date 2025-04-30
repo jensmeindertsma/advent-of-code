@@ -1,4 +1,4 @@
-use crate::common::Instruction;
+use crate::instruction::Instruction;
 
 pub fn part_2(input: &str) -> usize {
     input

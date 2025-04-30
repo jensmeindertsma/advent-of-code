@@ -5,6 +5,7 @@ use nom::{
     multi::separated_list0,
     sequence::terminated,
 };
+use ornament::ParseError;
 
 #[derive(Debug)]
 pub struct Sue {
@@ -20,8 +21,6 @@ pub struct Sue {
     pub trees: Option<u8>,
     pub vizslas: Option<u8>,
 }
-
-type ParseError<'a> = nom::Err<nom::error::Error<&'a str>>;
 
 pub fn parse_sue(input: &str) -> Result<Sue, ParseError> {
     let mut sue = Sue {
