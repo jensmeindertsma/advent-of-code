@@ -1,3 +1,4 @@
+mod hasher;
 mod part1;
 mod part2;
 

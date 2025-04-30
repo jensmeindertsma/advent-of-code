@@ -1,9 +1,9 @@
+use itoa::Buffer as FormattingBuffer;
 use std::{mem, ptr};
-
-use itoa::Buffer;
 
 pub struct Sequencer {
     iterations: usize,
+    formatter: FormattingBuffer,
     alpha: String,
     bravo: String,
 }
@@ -17,6 +17,7 @@ impl Sequencer {
 
         Self {
             iterations,
+            formatter: FormattingBuffer::new(),
             alpha,
             bravo,
         }
@@ -25,8 +26,6 @@ impl Sequencer {
     pub fn run(mut self) -> String {
         let mut current = &mut self.alpha;
         let mut next = &mut self.bravo;
-
-        let mut formatting_buffer = Buffer::new();
 
         for _ in 0..self.iterations {
             let mut characters = current.chars().peekable();
@@ -48,7 +47,7 @@ impl Sequencer {
                 // - `21` -> `1211`, one two, one one
                 // - `666344` -> `361324`
 
-                next.push_str(formatting_buffer.format(count));
+                next.push_str(self.formatter.format(count));
                 next.push(character);
             }
 
