@@ -34,8 +34,8 @@ Both of these puzzle implementation allocate many String heap objects instead of
 | 12  | [JSAbacusFramework.io](puzzles/2015/2015-12/)                   | ✅     | ✅     |
 | 13  | [Knights of the Dinner Table](puzzles/2015/2015-13/)            | ✅     | ✅     |
 | 14  | [Reindeer Olympics](puzzles/2015/2015-14/)                      | ✅     | ✅     |
-| 15  | Science for Hungry People                                       | ❌     | ❌     |
-| 16  | Aunt Sue                                                        | ❌     | ❌     |
+| 15  | [Science for Hungry People](puzzles/2015/2015-15/)              | ✅     | ✅     |
+| 16  | [Aunt Sue](puzzles/2015/2015-16/)                               | ✅     | ✅     |
 | 17  | No Such Thing as Too Much                                       | ❌     | ❌     |
 | 18  | Like a GIF For Your Yard                                        | ❌     | ❌     |
 | 19  | Medicine for Rudolph                                            | ❌     | ❌     |
