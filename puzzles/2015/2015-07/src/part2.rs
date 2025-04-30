@@ -1,4 +1,4 @@
-use crate::common::{Circuit, Instruction};
+use crate::{circuit::Circuit, instruction::Instruction};
 
 pub fn part_2(input: &str) -> u16 {
     let mut circuit = Circuit::build(
