@@ -1,5 +1,3 @@
-use std::str::FromStr;
-
 use nom::{
     Parser,
     branch::alt,
@@ -7,14 +5,15 @@ use nom::{
     character::complete::digit1,
     combinator::{map, map_res},
 };
+use ornament::ParseError;
 
 pub struct Instruction {
-    pub kind: InstructionKind,
+    pub task: Task,
     pub from: Location,
     pub to: Location,
 }
 
-pub enum InstructionKind {
+pub enum Task {
     Disable,
     Enable,
     Toggle,
@@ -25,32 +24,25 @@ pub struct Location {
     pub y: usize,
 }
 
-impl FromStr for Instruction {
-    type Err = String;
-
-    fn from_str(string: &str) -> Result<Self, Self::Err> {
-        instruction(string)
-            .map(|(_, result)| result)
-            .map_err(|error| error.to_string())
+impl Instruction {
+    pub fn parse(input: &str) -> Result<Self, ParseError> {
+        map(
+            (
+                alt((
+                    map(tag("turn on"), |_| Task::Enable),
+                    map(tag("turn off"), |_| Task::Disable),
+                    map(tag("toggle"), |_| Task::Toggle),
+                )),
+                tag(" "),
+                location,
+                tag(" through "),
+                location,
+            ),
+            |(task, _, from, _, to)| Instruction { task, from, to },
+        )
+        .parse(input.trim())
+        .map(|(_, instruction)| instruction)
     }
-}
-
-fn instruction(input: &str) -> nom::IResult<&str, Instruction> {
-    map(
-        (
-            alt((
-                map(tag("turn on"), |_| InstructionKind::Enable),
-                map(tag("turn off"), |_| InstructionKind::Disable),
-                map(tag("toggle"), |_| InstructionKind::Toggle),
-            )),
-            tag(" "),
-            location,
-            tag(" through "),
-            location,
-        ),
-        |(kind, _, from, _, to)| Instruction { kind, from, to },
-    )
-    .parse(input)
 }
 
 fn location(input: &str) -> nom::IResult<&str, Location> {

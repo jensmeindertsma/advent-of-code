@@ -1,3 +1,4 @@
+mod grid;
 mod instruction;
 mod part1;
 mod part2;

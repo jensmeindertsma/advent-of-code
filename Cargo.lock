@@ -206,6 +206,7 @@ name = "ornament"
 version = "0.1.0"
 dependencies = [
  "comfy-table",
+ "nom 8.0.0",
  "owo-colors",
  "serde",
  "serde_json",
