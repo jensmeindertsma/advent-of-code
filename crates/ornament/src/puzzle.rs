@@ -58,7 +58,7 @@ fn format_time(time: Duration) -> String {
     } else if time.as_millis() < 1000 {
         format!("{:.1}ms", time.as_micros() as f64 / 1000.0)
     } else {
-        format!("{:.2}s", time.as_micros())
+        format!("{:.2}s", time.as_secs_f32())
     }
 }
 
