@@ -1,37 +1,29 @@
-use crate::common::{Instruction, InstructionKind};
+use crate::{
+    grid::Grid,
+    instruction::{Instruction, Task},
+};
 
 pub fn part_1(input: &str) -> usize {
-    input
-        .trim()
-        .lines()
-        .map(|line| line.trim().parse::<Instruction>().unwrap())
-        .fold(vec![[Light::Off; 1000]; 1000], |mut grid, instruction| {
-            for column in grid
-                .iter_mut()
-                .take(instruction.to.x + 1)
-                .skip(instruction.from.x)
-            {
-                for light in column
-                    .iter_mut()
-                    .take(instruction.to.y + 1)
-                    .skip(instruction.from.y)
-                {
-                    match instruction.kind {
-                        InstructionKind::Toggle => {
-                            *light = match light {
-                                Light::On => Light::Off,
-                                Light::Off => Light::On,
-                            }
-                        }
-                        InstructionKind::Enable => *light = Light::On,
-                        InstructionKind::Disable => *light = Light::Off,
-                    }
+    let mut grid = Grid::new(1000, Light::Off);
+
+    grid.process(
+        input
+            .trim()
+            .lines()
+            .map(|line| Instruction::parse(line).unwrap()),
+        |task, light| match task {
+            Task::Toggle => {
+                *light = match light {
+                    Light::On => Light::Off,
+                    Light::Off => Light::On,
                 }
             }
+            Task::Enable => *light = Light::On,
+            Task::Disable => *light = Light::Off,
+        },
+    );
 
-            grid
-        })
-        .iter()
+    grid.columns()
         .map(|column| column.iter().filter(|light| **light == Light::On).count())
         .sum()
 }

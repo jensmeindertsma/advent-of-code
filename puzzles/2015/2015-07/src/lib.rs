@@ -1,4 +1,5 @@
-mod common;
+mod circuit;
+mod instruction;
 mod part1;
 mod part2;
 
@@ -11,10 +12,7 @@ mod tests {
 
     #[test]
     fn part_1() {
-        use super::{
-            common::{Circuit, Instruction},
-            part_1,
-        };
+        use super::{circuit::Circuit, instruction::Instruction, part_1};
 
         let mut circuit = Circuit::build(
             "

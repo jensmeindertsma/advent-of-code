@@ -2,6 +2,22 @@
 
 Rust is kinda my thing, lol!
 
+## Optimizations
+
+I'm all about speeding up the implementations. My goal is to have every
+puzzle be solved single-threadedly in under 500ms.
+
+For computation heavy puzzles like `2015-04` where hundreds of thousands of MD5 hashes have to be calculated, I cannot get the time to solve under 200ms without using manual multithreading. As much as I'd like to solve every puzzle in one-hundredths of a second, these kind of computations make that impossible. I was able to achieve 17ms performance by switching to manual multithreading (using either `rayon` or `crossbeam` impacts performance significantly making it slower than the single-threaded version). But I decided against using multi-threading for all the puzzles, because it complicates implementations where I'd like to focus on writing faster algorithms instead.
+
+All currently implemented puzzles run in 200ms or less.
+
+### Refactoring Targets
+
+- 2015-13
+- 2015-14
+- 2015-15
+- 2015-16????
+
 ## 2015
 
 | Day | Puzzle                                                          | Part 1 | Part 2 |
@@ -20,8 +36,8 @@ Rust is kinda my thing, lol!
 | 12  | [JSAbacusFramework.io](puzzles/2015/2015-12/)                   | ✅     | ✅     |
 | 13  | [Knights of the Dinner Table](puzzles/2015/2015-13/)            | ✅     | ✅     |
 | 14  | [Reindeer Olympics](puzzles/2015/2015-14/)                      | ✅     | ✅     |
-| 15  | Science for Hungry People                                       | ❌     | ❌     |
-| 16  | Aunt Sue                                                        | ❌     | ❌     |
+| 15  | [Science for Hungry People](puzzles/2015/2015-15/)              | ✅     | ✅     |
+| 16  | [Aunt Sue](puzzles/2015/2015-16/)                               | ✅     | ✅     |
 | 17  | No Such Thing as Too Much                                       | ❌     | ❌     |
 | 18  | Like a GIF For Your Yard                                        | ❌     | ❌     |
 | 19  | [Medicine for Rudolph](puzzles/2015/2015-19/)                   | ❌     | ❌     |
