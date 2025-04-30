@@ -16,7 +16,6 @@ All currently implemented puzzles run in 200ms or less.
 - 2015-13
 - 2015-14
 - 2015-15
-- 2015-16????
 
 ## 2015
 
