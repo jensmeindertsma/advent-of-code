@@ -55,7 +55,7 @@ pub fn parse_sue(input: &str) -> Result<Sue, ParseError> {
         ),
         separated_list0(tag(", "), property),
     )
-        .parse(input)?;
+        .parse(input.trim())?;
 
     sue.number = number;
 
