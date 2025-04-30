@@ -1,6 +1,6 @@
 use crate::sue::{Sue, parse_sue};
 
-pub fn part_1(input: &str) -> u16 {
+pub fn part_2(input: &str) -> u16 {
     let target = Sue {
         number: 0,
         akitas: Some(0),
@@ -28,15 +28,7 @@ pub fn part_1(input: &str) -> u16 {
                 return None;
             }
 
-            if sue.cats.is_some() && sue.cats != target.cats {
-                return None;
-            }
-
             if sue.children.is_some() && sue.children != target.children {
-                return None;
-            }
-
-            if sue.goldfish.is_some() && sue.goldfish != target.goldfish {
                 return None;
             }
 
@@ -44,21 +36,33 @@ pub fn part_1(input: &str) -> u16 {
                 return None;
             }
 
-            if sue.pomeranians.is_some() && sue.pomeranians != target.pomeranians {
-                return None;
-            }
-
             if sue.samoyeds.is_some() && sue.samoyeds != target.samoyeds {
-                return None;
-            }
-
-            if sue.trees.is_some() && sue.trees != target.trees {
                 return None;
             }
 
             if sue.vizslas.is_some() && sue.vizslas != target.vizslas {
                 return None;
             }
+
+            if sue.cats.is_some() && sue.cats < target.cats {
+                return None;
+            }
+
+            if sue.trees.is_some() && sue.trees < target.trees {
+                return None;
+            }
+
+            // -------------------------------------
+
+            if sue.pomeranians.is_some() && sue.pomeranians > target.pomeranians {
+                return None;
+            }
+
+            if sue.goldfish.is_some() && sue.goldfish > target.goldfish {
+                return None;
+            }
+
+            // -------------------------------------
 
             Some(sue.number)
         })

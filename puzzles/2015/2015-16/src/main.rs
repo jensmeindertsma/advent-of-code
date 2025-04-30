@@ -1,5 +1,5 @@
 use ornament::{Puzzle, Solution};
-use puzzle_2015_16::part_1;
+use puzzle_2015_16::{part_1, part_2};
 
 fn main() {
     Puzzle {
@@ -11,7 +11,11 @@ fn main() {
                 format!("the number of Sue is {answer}")
             })
         },
-        part_2: None,
+        part_2: Some(|input| {
+            Solution::new(part_2, input, |answer| {
+                format!("the number of Sue is {answer}")
+            })
+        }),
     }
     .solve(include_str!("../input.txt"))
 }
