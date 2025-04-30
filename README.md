@@ -11,12 +11,6 @@ For computation heavy puzzles like `2015-04` where hundreds of thousands of MD5 
 
 All currently implemented puzzles run in 200ms or less.
 
-### Optimization Targets
-
-- 2015-11 (165ms)
-
-This puzzle implementation allocate many String heap objects instead of re-using one buffer (sacrificing the iterator approach for performance).
-
 ### Refactoring Targets
 
 - 2015-13

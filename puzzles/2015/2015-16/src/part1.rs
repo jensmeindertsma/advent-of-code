@@ -1,66 +1,44 @@
-use crate::sue::{Sue, parse_sue};
+use crate::{
+    evaluator::{Evaluator, Target},
+    sue::parse_sue,
+};
 
 pub fn part_1(input: &str) -> u16 {
-    let target = Sue {
-        number: 0,
-        akitas: Some(0),
-        cars: Some(2),
-        cats: Some(7),
-        children: Some(3),
-        goldfish: Some(5),
-        perfumes: Some(1),
-        pomeranians: Some(3),
-        samoyeds: Some(2),
-        trees: Some(3),
-        vizslas: Some(0),
+    let target = Target {
+        akitas: 0,
+        cars: 2,
+        cats: 7,
+        children: 3,
+        goldfish: 5,
+        perfumes: 1,
+        pomeranians: 3,
+        samoyeds: 2,
+        trees: 3,
+        vizslas: 0,
     };
 
-    input
+    let evaluator = Evaluator {
+        akitas: |value, target| value == target,
+        cars: |value, target| value == target,
+        cats: |value, target| value == target,
+        children: |value, target| value == target,
+        goldfish: |value, target| value == target,
+        perfumes: |value, target| value == target,
+        pomeranians: |value, target| value == target,
+        samoyeds: |value, target| value == target,
+        trees: |value, target| value == target,
+        vizslas: |value, target| value == target,
+    };
+
+    for sue in input
         .trim()
         .lines()
         .map(|line| parse_sue(line.trim()).unwrap())
-        .find_map(|sue| {
-            if sue.akitas.is_some() && sue.akitas != target.akitas {
-                return None;
-            }
+    {
+        if evaluator.evaluate(&sue, &target) {
+            return sue.number;
+        }
+    }
 
-            if sue.cars.is_some() && sue.cars != target.cars {
-                return None;
-            }
-
-            if sue.cats.is_some() && sue.cats != target.cats {
-                return None;
-            }
-
-            if sue.children.is_some() && sue.children != target.children {
-                return None;
-            }
-
-            if sue.goldfish.is_some() && sue.goldfish != target.goldfish {
-                return None;
-            }
-
-            if sue.perfumes.is_some() && sue.perfumes != target.perfumes {
-                return None;
-            }
-
-            if sue.pomeranians.is_some() && sue.pomeranians != target.pomeranians {
-                return None;
-            }
-
-            if sue.samoyeds.is_some() && sue.samoyeds != target.samoyeds {
-                return None;
-            }
-
-            if sue.trees.is_some() && sue.trees != target.trees {
-                return None;
-            }
-
-            if sue.vizslas.is_some() && sue.vizslas != target.vizslas {
-                return None;
-            }
-
-            Some(sue.number)
-        })
-        .unwrap()
+    panic!("No matching Sue was found!");
 }
