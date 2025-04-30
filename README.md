@@ -15,6 +15,13 @@ For computation heavy puzzles like `2015-04` where hundreds of thousands of MD5 
 
 Both of these puzzle implementation allocate many String heap objects instead of re-using one buffer (sacrificing the iterator approach for performance).
 
+### Refactoring Targets
+
+- 2015-13
+- 2015-14
+- 2015-15
+- 2015-16????
+
 ## 2015
 
 | Day | Puzzle                                                          | Part 1 | Part 2 |
