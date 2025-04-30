@@ -15,7 +15,7 @@ All currently implemented puzzles run in 200ms or less.
 
 - 2015-11 (165ms)
 
-Both of these puzzle implementation allocate many String heap objects instead of re-using one buffer (sacrificing the iterator approach for performance).
+This puzzle implementation allocate many String heap objects instead of re-using one buffer (sacrificing the iterator approach for performance).
 
 ### Refactoring Targets
 
