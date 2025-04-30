@@ -1,11 +1,12 @@
 use nom::{
-    Parser,
-    bytes::complete::{tag, take_until},
+    AsChar, Parser,
+    bytes::complete::{tag, take_until, take_while1},
     combinator::map_res,
     multi::separated_list0,
     sequence::terminated,
 };
 
+#[derive(Debug)]
 pub struct Sue {
     pub number: u16,
     pub akitas: Option<u8>,
@@ -38,21 +39,23 @@ pub fn parse_sue(input: &str) -> Result<Sue, ParseError> {
     };
 
     fn property(input: &str) -> nom::IResult<&str, (&str, u8)> {
-        (
-            take_until(":"),
-            tag(": "),
-            map_res(take_until(","), |value: &str| value.parse()),
-        )
-            .map(|(name, _, value)| (name, value))
-            .parse(input)
+        let (input, name) = take_until(":").parse(input)?;
+        let (input, _) = tag(": ").parse(input)?;
+        let (input, value) = take_while1(AsChar::is_alphanum)
+            .map_res(|string: &str| string.parse())
+            .parse(input)?;
+
+        Ok((input, (name, value)))
     }
 
-    let (_, (number, properties)) = (
+    let (_, (_, number, properties)) = (
         tag("Sue "),
-        terminated(map_res(take_until(":"), |str: &str| str.parse()), tag(": ")),
+        terminated(
+            map_res(take_until(": "), |str: &str| str.parse::<u16>()),
+            tag(": "),
+        ),
         separated_list0(tag(", "), property),
     )
-        .map(|(_, number, properties)| (number, properties))
         .parse(input)?;
 
     sue.number = number;
