@@ -11,9 +11,9 @@ pub struct Sequencer {
 impl Sequencer {
     pub fn new(input: &str, iterations: usize) -> Self {
         let mut alpha = String::from(input.trim());
-        alpha.reserve(10_000_000);
+        alpha.reserve(5_000_000);
 
-        let bravo = String::with_capacity(10_000_000);
+        let bravo = String::with_capacity(5_000_000);
 
         Self {
             iterations,
