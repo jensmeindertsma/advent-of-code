@@ -325,6 +325,7 @@ dependencies = [
 name = "puzzle-2015-10"
 version = "0.0.0"
 dependencies = [
+ "itoa",
  "ornament",
 ]
 

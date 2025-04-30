@@ -1,6 +1,6 @@
 mod part1;
 mod part2;
-mod sequence;
+mod sequencer;
 
 pub use part1::part_1;
 pub use part2::part_2;

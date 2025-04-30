@@ -1,8 +1,9 @@
-use crate::sequence::generate_sequence;
+use crate::sequencer::Sequencer;
 
 pub fn part_2(input: &str) -> usize {
-    let input = input.trim().to_owned();
-    (0..50)
-        .fold(input, |sequence, _| generate_sequence(sequence))
-        .len()
+    let sequencer = Sequencer::new(input, 50);
+
+    let sequence = sequencer.run();
+
+    sequence.len()
 }
