@@ -40,7 +40,7 @@ All of these feature a large amount of code duplication (copy paste part 1 to pa
 | 15  | [Science for Hungry People](puzzles/2015/2015-15/)              | ✅     | ✅     |
 | 16  | [Aunt Sue](puzzles/2015/2015-16/)                               | ✅     | ✅     |
 | 17  | No Such Thing as Too Much                                       | ❌     | ❌     |
-| 18  | Like a GIF For Your Yard                                        | ❌     | ❌     |
+| 18  | [Like a GIF For Your Yard](puzzles/2015/2015-18)                | ❌     | ❌     |
 | 19  | Medicine for Rudolph                                            | ❌     | ❌     |
 | 20  | Infinite Elves and Infinite Houses                              | ❌     | ❌     |
 | 21  | RPG Simulator 20XX                                              | ❌     | ❌     |
