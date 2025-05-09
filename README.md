@@ -41,7 +41,7 @@ All of these feature a large amount of code duplication (copy paste part 1 to pa
 | 16  | [Aunt Sue](puzzles/2015/2015-16/)                               | ✅     | ✅     |
 | 17  | No Such Thing as Too Much                                       | ❌     | ❌     |
 | 18  | Like a GIF For Your Yard                                        | ❌     | ❌     |
-| 19  | Medicine for Rudolph                                            | ❌     | ❌     |
+| 19  | [Medicine for Rudolph](puzzles/2015/2015-19/)                   | ❌     | ❌     |
 | 20  | Infinite Elves and Infinite Houses                              | ❌     | ❌     |
 | 21  | RPG Simulator 20XX                                              | ❌     | ❌     |
 | 22  | Wizard Simulator 20XX                                           | ❌     | ❌     |
