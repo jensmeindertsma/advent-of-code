@@ -1,7 +1,7 @@
 use nom::{
+    IResult, Parser,
     bytes::complete::{tag, take_while1},
     sequence::terminated,
-    IResult, Parser,
 };
 use ornament::ParseError;
 
