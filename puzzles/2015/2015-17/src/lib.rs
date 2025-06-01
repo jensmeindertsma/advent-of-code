@@ -24,6 +24,6 @@ mod tests {
             4
         );
 
-        assert_eq!(part_1(INPUT, 150), 18);
+        assert_eq!(part_1(INPUT, 150), 1304);
     }
 }

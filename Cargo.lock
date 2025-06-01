@@ -383,6 +383,7 @@ dependencies = [
 name = "puzzle-2015-17"
 version = "0.0.0"
 dependencies = [
+ "itertools",
  "ornament",
 ]
 

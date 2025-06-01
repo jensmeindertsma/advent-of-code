@@ -3,4 +3,5 @@ name = "puzzle-2015-17"
 edition = "2024"
 
 [dependencies]
+itertools.workspace = true
 ornament.workspace = true
