@@ -1,5 +1,5 @@
 use crate::{
-    ingredient::{parse_ingredient, Ingredient},
+    ingredient::{Ingredient, parse_ingredient},
     mixer::Mixer,
 };
 

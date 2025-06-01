@@ -1,23 +1,6 @@
 # Advent of Code
 
-Rust is kinda my thing, lol!
-
-## Optimizations
-
-I'm all about speeding up the implementations. My goal is to have every
-puzzle be solved single-threadedly in under 500ms.
-
-For computation heavy puzzles like `2015-04` where hundreds of thousands of MD5 hashes have to be calculated, I cannot get the time to solve as low as I'd like. I tried using `rayon` and `crossbeam` to implement multithreading but they reduced performance (probably due to some overhead). When I manually implemented multithreading without any external libraries, I was able to reduce the time-to-solve on `2015-04` from 200ms to 17ms. Despite this, I decided against multithreading for all the puzzles in this repository, because I want to focus on learning and optimizing the algorithms used to solve the puzzles instead of the multithreading logic.
-
-All currently implemented puzzles run in 200ms or less.
-
-### Refactoring Targets
-
-- 2015-13
-- 2015-14
-- 2015-15
-
-All of these feature a large amount of code duplication (copy paste part 1 to part 2 and modified where needed) which could be eliminated through the implementation of some shared struct or function.
+Rust is kinda cool :D
 
 ## 2015
 
