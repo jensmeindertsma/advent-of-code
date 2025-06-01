@@ -17,6 +17,7 @@ members = [
 
 [workspace.dependencies]
 hex = "0.4.3"
+indoc = "2.0.6"
 itertools = "0.14.0"
 itoa = "1.0.15"
 md5 = "0.7.0"

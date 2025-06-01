@@ -22,7 +22,7 @@ Rust is kinda cool :D
 | 14  | [Reindeer Olympics](puzzles/2015/2015-14/)                      | ✅     | ✅     |
 | 15  | [Science for Hungry People](puzzles/2015/2015-15/)              | ✅     | ✅     |
 | 16  | [Aunt Sue](puzzles/2015/2015-16/)                               | ✅     | ✅     |
-| 17  | No Such Thing as Too Much                                       | ❌     | ❌     |
+| 17  | [No Such Thing as Too Much](puzzles/2015/2015-17/)              | ❌     | ❌     |
 | 18  | Like a GIF For Your Yard                                        | ❌     | ❌     |
 | 19  | Medicine for Rudolph                                            | ❌     | ❌     |
 | 20  | Infinite Elves and Infinite Houses                              | ❌     | ❌     |
