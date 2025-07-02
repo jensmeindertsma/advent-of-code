@@ -25,7 +25,7 @@ pub struct Location {
 }
 
 impl Instruction {
-    pub fn parse(input: &str) -> Result<Self, ParseError> {
+    pub fn parse(input: &'_ str) -> Result<Self, ParseError<'_>> {
         map(
             (
                 alt((

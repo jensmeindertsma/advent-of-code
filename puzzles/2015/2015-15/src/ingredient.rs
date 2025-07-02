@@ -14,7 +14,7 @@ pub struct Ingredient {
     pub calories: u8,
 }
 
-pub fn parse_ingredient(input: &str) -> Result<Ingredient, ParseError> {
+pub fn parse_ingredient(input: &'_ str) -> Result<Ingredient, ParseError<'_>> {
     fn string(input: &str) -> IResult<&str, &str> {
         take_while1(|c: char| c.is_ascii_alphabetic()).parse(input)
     }

@@ -63,7 +63,7 @@ mod parsing {
         sequence::delimited,
     };
 
-    pub fn instruction(input: &str) -> nom::IResult<&str, Instruction> {
+    pub fn instruction(input: &'_ str) -> nom::IResult<&'_ str, Instruction<'_>> {
         map((gate, tag("->"), wire), |(gate, _, output)| Instruction {
             gate,
             output,
@@ -71,44 +71,44 @@ mod parsing {
         .parse(input)
     }
 
-    fn gate(input: &str) -> nom::IResult<&str, Gate> {
-        fn and(input: &str) -> nom::IResult<&str, Gate> {
+    fn gate(input: &'_ str) -> nom::IResult<&'_ str, Gate<'_>> {
+        fn and(input: &str) -> nom::IResult<&str, Gate<'_>> {
             map((value, tag("AND"), value), |(a, _, b)| Gate::And {
                 wires: (a, b),
             })
             .parse(input)
         }
 
-        fn connect(input: &str) -> nom::IResult<&str, Gate> {
+        fn connect(input: &'_ str) -> nom::IResult<&'_ str, Gate<'_>> {
             map(wire, Gate::Connect).parse(input)
         }
 
-        fn left_shift(input: &str) -> nom::IResult<&str, Gate> {
+        fn left_shift(input: &'_ str) -> nom::IResult<&'_ str, Gate<'_>> {
             map((wire, tag("LSHIFT"), number), |(wire, _, amount)| {
                 Gate::LeftShift { wire, amount }
             })
             .parse(input)
         }
 
-        fn or(input: &str) -> nom::IResult<&str, Gate> {
+        fn or(input: &'_ str) -> nom::IResult<&'_ str, Gate<'_>> {
             map((value, tag("OR"), value), |(a, _, b)| Gate::Or {
                 wires: (a, b),
             })
             .parse(input)
         }
 
-        fn not(input: &str) -> nom::IResult<&str, Gate> {
+        fn not(input: &'_ str) -> nom::IResult<&'_ str, Gate<'_>> {
             map((tag("NOT"), wire), |(_, wire)| Gate::Not(wire)).parse(input)
         }
 
-        fn right_shift(input: &str) -> nom::IResult<&str, Gate> {
+        fn right_shift(input: &'_ str) -> nom::IResult<&'_ str, Gate<'_>> {
             map((wire, tag("RSHIFT"), number), |(wire, _, amount)| {
                 Gate::RightShift { wire, amount }
             })
             .parse(input)
         }
 
-        fn signal(input: &str) -> nom::IResult<&str, Gate> {
+        fn signal(input: &'_ str) -> nom::IResult<&'_ str, Gate<'_>> {
             map(number, Gate::Signal).parse(input)
         }
 

@@ -22,7 +22,7 @@ pub struct Sue {
     pub vizslas: Option<u8>,
 }
 
-pub fn parse_sue(input: &str) -> Result<Sue, ParseError> {
+pub fn parse_sue(input: &'_ str) -> Result<Sue, ParseError<'_>> {
     let mut sue = Sue {
         number: 0,
         akitas: None,

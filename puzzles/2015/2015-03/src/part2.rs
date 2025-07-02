@@ -9,7 +9,7 @@ pub fn part_2(input: &str) -> usize {
             ((0, 0), (0, 0), HashSet::from([(0, 0)])),
             |((mut santa_x, mut santa_y), (mut robo_x, mut robo_y), mut houses),
              (turn, direction)| {
-                let (turn_x, turn_y) = if turn % 2 == 0 {
+                let (turn_x, turn_y) = if turn.is_multiple_of(2) {
                     (&mut santa_x, &mut santa_y)
                 } else {
                     (&mut robo_x, &mut robo_y)
