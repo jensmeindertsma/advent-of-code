@@ -3,4 +3,4 @@ name = "puzzle-2015-01"
 edition = "2024"
 
 [dependencies]
-ornament.workspace = true
+cedar.workspace = true

@@ -1,9 +1,8 @@
-mod instruction;
-mod part1;
-mod part2;
+mod part_one;
+mod part_two;
 
-pub use part1::part_1;
-pub use part2::part_2;
+pub use part_one::part_1;
+pub use part_two::part_2;
 
 #[cfg(test)]
 mod tests {

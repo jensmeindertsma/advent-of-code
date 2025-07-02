@@ -1,8 +1,5 @@
 # macOS
 .DS_Store
 
-# direnv
-/.direnv/
-
 # Cargo
 /target/

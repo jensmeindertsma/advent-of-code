@@ -1,7 +1,0 @@
-[package]
-name = "puzzle-2015-12"
-edition = "2024"
-
-[dependencies]
-ornament.workspace = true
-serde_json.workspace = true

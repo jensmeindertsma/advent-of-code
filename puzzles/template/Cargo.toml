@@ -1,6 +1,0 @@
-[package]
-name = "puzzle-template"
-edition = "2024"
-
-[dependencies]
-ornament.workspace = true

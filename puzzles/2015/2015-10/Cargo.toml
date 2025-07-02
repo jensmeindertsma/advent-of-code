@@ -1,7 +1,0 @@
-[package]
-name = "puzzle-2015-10"
-edition = "2024"
-
-[dependencies]
-itoa.workspace = true
-ornament.workspace = true
