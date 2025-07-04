@@ -3,12 +3,12 @@
 version = 4
 
 [[package]]
-name = "cedar"
-version = "0.1.0"
-
-[[package]]
 name = "puzzle-2015-01"
 version = "0.0.0"
 dependencies = [
- "cedar",
+ "spruce",
 ]
+
+[[package]]
+name = "spruce"
+version = "0.1.0"

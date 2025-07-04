@@ -1,3 +1,3 @@
-pub fn part_2(input: &str) -> usize {
+pub fn part_two(input: &str) -> usize {
     input.len()
 }

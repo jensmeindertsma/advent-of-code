@@ -15,4 +15,4 @@ members = [
 ]
 
 [workspace.dependencies]
-spruce = { path = "crates/cedar" }
+spruce = { path = "crates/spruce" }

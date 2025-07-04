@@ -2,7 +2,7 @@ help:
     just --list
 
 check:
-    cargo clippy
+    cargo clippy --all-features
 
 debug puzzle:
     cargo run --package puzzle-{{puzzle}}
