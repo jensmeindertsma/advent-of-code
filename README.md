@@ -1,4 +1,4 @@
-# Advent of Code
+# 🎄 Advent of Code
 
 Rust is kinda cool :D
 
