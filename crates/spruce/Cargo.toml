@@ -2,3 +2,8 @@
 name = "spruce"
 version = "0.1.0"
 edition = "2024"
+
+[dependencies]
+comfy-table = "7.1.4"
+indoc = "2.0.6"
+owo-colors = "4.2.2"

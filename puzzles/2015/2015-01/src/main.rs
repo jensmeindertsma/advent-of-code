@@ -5,8 +5,11 @@ const INPUT: &str = include_str!("../input.txt");
 
 fn main() {
     Puzzle {
+        year: 2015,
+        day: 1,
+        name: "Not Quite Lisp",
         part_one,
-        part_two: Some(part_two),
+        part_two,
     }
-    .solve(INPUT);
+    .solve(INPUT)
 }
