@@ -1,4 +1,4 @@
-# Advent of Code
+# 🎄 Advent of Code
 
 Hey there! These are all my solutions for the yearly [Advent of Code](https://adventofcode.com/) programming event. Every year 25 new puzzles are released, which in order to solve them, you have to dive deep into math, algorithms, and low level computing and performance optimization (or you can just do it in Python / JavaScript and let your program run overnight 😲). Each puzzle comes with two parts, the second of which only unlocks after completing the first. The second part usually throws in a small twist making you reconsider and refactor your original approach.
 
