@@ -6,6 +6,8 @@ Each puzzle description usually describes some expected output for some input. I
 
 ![](./images/nextest.png)
 
+> "Wait, what is `just`???" i hear you thinking! Check out [just.systems](https://just.systems/)
+
 You can also run only the tests of a specific puzzle by running `just test <year>-<day>` like `just test 2015-02`. These test cases across all the puzzle solutions will allow you to quickly identify regressions and monitor your progress.
 
 But how do we even get the correct answer if our implementation is correct? I made the `spruce` crate which is used in all puzzle crates to run your implementation against the input and output the result.If you pass it your `part_one` and `part_two` functions and your input, it record the answer and measure how long your function took. You can then submit the answer to the Advent of Code website to get your 🌟 star.
