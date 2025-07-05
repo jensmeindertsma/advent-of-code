@@ -26,10 +26,10 @@ impl<One: Display, Two: Display> Puzzle<One, Two> {
             .choose(&mut rng)
             .expect("the options list is not empty");
 
-        println!("{banner}\n");
+        println!("\n{banner}\n");
 
         println!(
-            "{} {} {}{} {}",
+            "\n{} {} {}{} {}\n",
             "==>".bold().red(),
             "solving puzzle".bold(),
             format!("{}-{:02}", self.year, self.day).bold().blue(),
@@ -42,8 +42,8 @@ impl<One: Display, Two: Display> Puzzle<One, Two> {
         table.load_preset("││──├─┼┤│─┼├┤┬┴┌┐└┘");
 
         table.set_header(vec![
-            Cell::new("  🎄  "),
-            Cell::new("Solution").add_attribute(Attribute::Bold),
+            Cell::new("Puzzle").add_attribute(Attribute::Bold),
+            Cell::new("Answer").add_attribute(Attribute::Bold),
             Cell::new("Time").add_attribute(Attribute::Bold),
         ]);
 
@@ -71,7 +71,7 @@ impl<One: Display, Two: Display> Puzzle<One, Two> {
             Cell::new(format_time(duration)),
         ]);
 
-        println!("{table}");
+        println!("{table}\n");
     }
 }
 

@@ -1,6 +1,22 @@
 # Advent of Code
 
-Rust is kinda cool :D
+Hey there! These are all my solutions for the yearly [Advent of Code](https://adventofcode.com/) programming event. Every year 25 new puzzles are released, which in order to solve them, you have to dive deep into math, algorithms, and low level computing and performance optimization (or you can just do it in Python / JavaScript and let your program run overnight 😲). Each puzzle comes with two parts, the second of which only unlocks after completing the first. The second part usually throws in a small twist making you reconsider and refactor your original approach.
+
+Each puzzle description usually describes some expected output for some input. I've made these into test cases which are located in the `lib.rs` file for each puzzle crate. Once I solve a puzzle I also add the correct output for my input as a test case. You can run these test cases with `just test-all`. This will invoke `cargo-nextest`, and the output will look something like below:
+
+![](./images/nextest.png)
+
+You can also run only the tests of a specific puzzle by running `just test <year>-<day>` like `just test 2015-02`. These test cases across all the puzzle solutions will allow you to quickly identify regressions and monitor your progress.
+
+But how do we even get the correct answer if our implementation is correct? I made the `spruce` crate which is used in all puzzle crates to run your implementation against the input and output the result.If you pass it your `part_one` and `part_two` functions and your input, it record the answer and measure how long your function took. You can then submit the answer to the Advent of Code website to get your 🌟 star.
+
+I couldn't help myself but spend 3 hours designing and colorizing some beatiful ASCII art to be printed by `spruce` when running your puzzle implementation:
+
+![](./images/snowman.png)
+
+![](./images/village.png)
+
+I like speed and so I'm doing all the puzzles in Rust. You can see my progress down below, year by year. As you can see I'm far from being finished, but I try to complete some more puzzles from time to time.
 
 ## 2015
 

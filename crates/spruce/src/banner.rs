@@ -10,12 +10,44 @@ impl fmt::Display for Banner {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         match self {
             Self::Snowman => {
-                let line_one = format!("     {}", "__".bold().red());
-                let line_two = format!("   {}", "_|==|_".bold().red());
-                let line_three = format!("    {}{}", "('')".bold().white(), "___/".bold().yellow());
-                let line_four = format!("{}{}", ">--".bold().yellow(), "(`^^')".bold().white());
-                let line_five = format!("  {}", "(`^'^'`)".bold().white());
-                let line_six = format!("  {}", "`======' ".bold().white());
+                let line_one = format!(
+                    "     {}            {}",
+                    "__".bold().red(),
+                    " _   _                              _   _       _ _     _                      _"
+                        .bold()
+                );
+                let line_two = format!(
+                    "   {}          {}",
+                    "_|==|_".bold().red(),
+                    "| | | | __ _ _ __  _ __  _   _     | | | | ___ | (_) __| | __ _ _   _ ___     | |"
+                        .bold()
+                );
+                let line_three = format!(
+                    "    {}{}       {}",
+                    "('')".bold().white(),
+                    "___/".bold().yellow(),
+                    "| |_| |/ _` | '_ \\| '_ \\| | | |    | |_| |/ _ \\| | |/ _` |/ _` | | | / __|    | |"
+                        .bold()
+                );
+                let line_four = format!(
+                    "{}{}          {}",
+                    ">--".bold().yellow(),
+                    "(`^^')".bold().white(),
+                    "|  _  | (_| | |_) | |_) | |_| |    |  _  | (_) | | | (_| | (_| | |_| \\__ \\    | |"
+                        .bold()
+                );
+                let line_five = format!(
+                    "  {}         {}",
+                    "(`^'^'`)".bold().white(),
+                    "|_| |_|\\__,_| .__/| .__/ \\__, |    |_| |_|\\___/|_|_|\\__,_|\\__,_|\\__, |___/    |_|"
+                        .bold()
+                );
+                let line_six = format!(
+                    "  {}        {}",
+                    "`======' ".bold().white(),
+                    "            |_|   |_|    |___/                                  |___/         (_)"
+                        .bold()
+                );
 
                 write!(
                     f,
