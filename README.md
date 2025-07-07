@@ -18,7 +18,9 @@ I couldn't help myself but spend 3 hours designing and colorizing some beatiful 
 
 ![](./images/village.png)
 
-I like speed and so I'm doing all the puzzles in Rust.This way every puzzle solves within a second (or you can just do it in Python / JavaScript and let your program run overnight 😲), You can see my progress down below, year by year. As you can see I'm far from being finished, but I try to complete some more puzzles from time to time.
+I dearly hope this ASCII art brought you some joy or giggles ☺️. Have a good time, be it summer or winter!
+
+I like speed and so I'm doing all the puzzles in Rust. This way every puzzle solves within a second (or you can just do it in Python / JavaScript and let your program run overnight 😲), You can see my progress down below, year by year. As you can see I'm far from being finished, but I try to complete some more puzzles from time to time.
 
 ## 2015
 
