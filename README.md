@@ -2,11 +2,11 @@
 
 Hey there! These are all my solutions for the yearly [Advent of Code](https://adventofcode.com/) programming event. Every year 25 new puzzles are released, which in order to solve them, you have to dive deep into math, data structures and algorithms. Each puzzle comes with two parts, the second of which only unlocks after completing the first. The second part usually throws in a small twist making you reconsider and refactor your original approach.
 
-Each puzzle description usually describes some expected output for some input. I've made these into test cases which are located in the `lib.rs` file for each puzzle crate. Once I solve a puzzle I also add the correct output for my input as a test case. You can run these test cases with `just test-all`. This will invoke `cargo-nextest`, and the output will look something like below:
+Each puzzle description usually describes some expected output for some input. I've made these into test cases which are located in the `lib.rs` file for each puzzle crate. Once I solve a puzzle I also add the correct output for my input as a test case. You can run these test cases with `just test-all`. This will invoke `cargo-nextest` (must be installed beforehand with `cargo install cargo-nextest`), and the output will look something like below:
 
 ![](./images/nextest.png)
 
-> "Wait, what is `just`???" i hear you thinking! Check out [just.systems](https://just.systems/)
+> "Wait, what is `just`???" I hear you thinking! Check out [just.systems](https://just.systems/) or just run `cargo install just`.
 
 You can also run only the tests of a specific puzzle by running `just test <year>-<day>` like `just test 2015-02`. These test cases across all the puzzle solutions will allow you to quickly identify regressions and monitor your progress.
 
