@@ -23,5 +23,6 @@ fn one() {
 fn two() {
     assert_eq!(part_two(")"), 1);
     assert_eq!(part_two("()())"), 5);
+
     assert_eq!(part_two(include_str!("../input.txt")), 1771);
 }
