@@ -29,7 +29,7 @@ impl<One: Display, Two: Display> Puzzle<One, Two> {
         println!("\n{banner}\n");
 
         println!(
-            "\n{} {} {}{} {}\n",
+            "{} {} {}{} {}\n",
             "==>".bold().red(),
             "solving puzzle".bold(),
             format!("{}-{:02}", self.year, self.day).bold().blue(),
