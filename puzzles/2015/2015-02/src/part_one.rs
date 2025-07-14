@@ -1,19 +1,34 @@
+use crate::present::Present;
+use nom::{Parser, bytes::complete as bytes, character::complete as character, combinator};
+
 pub fn part_one(input: &str) -> usize {
-    input.trim().lines().map(|line| line.len()).sum()
-}
+    input
+        .trim()
+        .lines()
+        .map(|line| {
+            fn dimension(input: &str) -> nom::IResult<&str, usize> {
+                combinator::map_res(character::digit1, str::parse).parse(input)
+            }
 
-struct Cube {
-    length: u8,
-    width: u8,
-    height: u8,
-}
+            let (_, (length, _, width, _, height)) = (
+                dimension,
+                bytes::tag("x"),
+                dimension,
+                bytes::tag("x"),
+                dimension,
+            )
+                .parse(line)
+                .unwrap();
 
-impl Cube {
-    fn new(length: u8, width: u8, height: u8) -> Self {
-        Self {
-            length,
-            width,
-            height,
-        }
-    }
+            Present::new(length, width, height)
+        })
+        .map(|present| {
+            let sides = present.sides();
+
+            let surface_area: usize = sides.iter().map(|side| side.area()).sum();
+            let extra: usize = sides.iter().map(|side| side.area()).min().unwrap();
+
+            surface_area + extra
+        })
+        .sum()
 }

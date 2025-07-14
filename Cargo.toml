@@ -15,4 +15,5 @@ members = [
 ]
 
 [workspace.dependencies]
+nom = "8.0.0"
 spruce = { path = "crates/spruce" }
