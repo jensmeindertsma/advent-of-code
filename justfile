@@ -8,9 +8,6 @@ debug puzzle:
     cargo run --package puzzle-{{puzzle}}
 
 format:
-    cargo fmt --all
-
-format-check:
     cargo fmt --all --check
 
 solve puzzle:

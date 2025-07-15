@@ -1,6 +1,6 @@
 use core::fmt::{self, Formatter};
 use owo_colors::OwoColorize;
-use terminal_size::{terminal_size, Width};
+use terminal_size::{Width, terminal_size};
 
 pub enum Banner {
     Snowman,
@@ -9,11 +9,10 @@ pub enum Banner {
 
 impl fmt::Display for Banner {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        let (Width(width), _) =  terminal_size().unwrap();
+        let (Width(width), _) = terminal_size().unwrap();
 
         match self {
             Self::Snowman => {
-               
                 // If the terminal is too narrow the message will
                 // render wholly screwed up. So we skip the message
                 // and render only the snowman
@@ -62,38 +61,14 @@ impl fmt::Display for Banner {
                         "{line_one}\n{line_two}\n{line_three}\n{line_four}\n{line_five}\n{line_six}"
                     )
                 } else {
-                    let line_one = format!(
-                    "     {}",
-                    "__".bold().red(),
-              
-                );
-                    let line_two = format!(
-                    "   {}",
-                    "_|==|_".bold().red(),
-                 
-                );
-                    let line_three = format!(
-                    "    {}{}",
-                    "('')".bold().white(),
-                    "___/".bold().yellow(),
-                   
-                );
-                    let line_four = format!(
-                    "{}{}",
-                    ">--".bold().yellow(),
-                    "(`^^')".bold().white(),
-                    
-                );
-                    let line_five = format!(
-                    "  {}",
-                    "(`^'^'`)".bold().white(),
-                   
-                );
-                    let line_six = format!(
-                    "  {}",
-                    "`======' ".bold().white(),
-                      
-                );
+                    let line_one = format!("     {}", "__".bold().red(),);
+                    let line_two = format!("   {}", "_|==|_".bold().red(),);
+                    let line_three =
+                        format!("    {}{}", "('')".bold().white(), "___/".bold().yellow(),);
+                    let line_four =
+                        format!("{}{}", ">--".bold().yellow(), "(`^^')".bold().white(),);
+                    let line_five = format!("  {}", "(`^'^'`)".bold().white(),);
+                    let line_six = format!("  {}", "`======' ".bold().white(),);
 
                     write!(
                         f,

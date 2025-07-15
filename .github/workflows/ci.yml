@@ -31,7 +31,7 @@ jobs:
         run: rustup toolchain install
 
       - name: Check formatting
-        run: just format-check
+        run: just format
 
   test:
     runs-on: ubuntu-latest
