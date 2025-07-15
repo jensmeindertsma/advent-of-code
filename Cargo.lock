@@ -181,6 +181,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2015-03"
+version = "0.0.0"
+dependencies = [
+ "spruce",
+]
+
+[[package]]
+name = "puzzle-template"
+version = "0.0.0"
+dependencies = [
+ "spruce",
+]
+
+[[package]]
 name = "quote"
 version = "1.0.40"
 source = "registry+https://github.com/rust-lang/crates.io-index"
