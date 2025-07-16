@@ -17,7 +17,7 @@ pub fn part_one(input: &str) -> usize {
 
             buffer.clear();
 
-            result.starts_with("00000".as_bytes())
+            result[0] == 0 && result[1] == 0 && (result[2] & 0xF0) == 0
         })
         .unwrap()
 }
