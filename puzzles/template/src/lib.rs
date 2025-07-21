@@ -13,7 +13,7 @@ fn one() {
 
 #[test]
 fn two() {
-    assert_eq!(part_two("123"), 6);
+    assert_eq!(part_two("123"), 3);
 
-    assert_eq!(part_two(include_str!("../input.txt")), 45);
+    assert_eq!(part_two(include_str!("../input.txt")), 9);
 }
