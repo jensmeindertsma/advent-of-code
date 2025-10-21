@@ -53,4 +53,4 @@ jobs:
           tool: nextest@0.9.106
 
       - name: Run tests
-        run: just test
+        run: just test-all
