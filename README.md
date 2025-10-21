@@ -6,6 +6,18 @@
 
 This repository contains my solutions to the yearly [Advent of Code](https://adventofcode.com/2024/about) calendar of programming puzzles.
 
+## Overview
+
+Each puzzle is defined as a package under `puzzles/{year}/{year}-{day}`.
+
+- A puzzle package has a library crate (`lib.rs`) containing a test unit for each part of the puzzle. Assertions are made according to the example inputs given on the Advent of Code website's description of the puzzle.
+
+- Each puzzle also has a binary crate (`main.rs`) using my custom `spruce` package (`crates/spruce`), to report the result of running my puzzle input through my solution functions, measuring the time taken.
+
+I have taken the liberty to add several cool ASCII-art banners to the output from `spruce`:
+
+![](./assets/spruce-output.png)
+
 ## Puzzles
 
 ### 2015
