@@ -18,7 +18,7 @@ Each puzzle is defined as a package under `puzzles/{year}/{year}-{day}`.
 
 I have taken the liberty to add several cool ASCII-art banners to the output from `spruce`:
 
-![](./assets/spruce-output.png)
+![](./assets/solve-output.png)
 
 ## Puzzles
 
