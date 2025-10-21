@@ -10,7 +10,9 @@ This repository contains my solutions to the yearly [Advent of Code](https://adv
 
 Each puzzle is defined as a package under `puzzles/{year}/{year}-{day}`.
 
-- A puzzle package has a library crate (`lib.rs`) containing a test unit for each part of the puzzle. Assertions are made according to the example inputs given on the Advent of Code website's description of the puzzle.
+- A puzzle package has a library crate (`lib.rs`) containing a test unit for each part of the puzzle. Assertions are made according to the example inputs given on the Advent of Code website's description of the puzzle. Tests can be executed through `just test {year}-{day}` or `just test-all`:
+
+![](./assets/test-output.png)
 
 - Each puzzle also has a binary crate (`main.rs`) using my custom `spruce` package (`crates/spruce`), to report the result of running my puzzle input through my solution functions, measuring the time taken.
 
