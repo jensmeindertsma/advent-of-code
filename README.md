@@ -4,9 +4,9 @@
 </div>
 <br/>
 
-This repository contains my solutions to the yearly [Advent of Code](https://adventofcode.com/2024/about) calendar of programming puzzles.
+## Introduction
 
-## Overview
+This repository contains my solutions to the yearly [Advent of Code](https://adventofcode.com/2024/about) calendar of programming puzzles.
 
 Each puzzle is defined as a package under `puzzles/{year}/{year}-{day}`.
 
