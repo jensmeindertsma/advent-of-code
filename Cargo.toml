@@ -1,7 +1,7 @@
 [workspace]
 package.edition = "2024"
 resolver = "3"
-members = ["crates/*", "puzzles/template", "puzzles/2015/*"]
+members = ["crates/*", "puzzles/template", "puzzles/2015/*", "puzzles/2016/*"]
 
 [workspace.dependencies]
 spruce = { path = "crates/spruce" }
