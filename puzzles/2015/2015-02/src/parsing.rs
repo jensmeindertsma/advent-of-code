@@ -6,8 +6,6 @@ pub fn present(input: &str) -> nom::IResult<&str, Present> {
         map_res(digit1, |n: &str| n.parse()).parse(input)
     }
 
-    eprintln!("`{input}`");
-
     let (input, (length, _, width, _, height)) =
         (dimension, tag("x"), dimension, tag("x"), dimension).parse(input)?;
 
