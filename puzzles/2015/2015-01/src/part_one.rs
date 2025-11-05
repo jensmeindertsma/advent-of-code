@@ -1,4 +1,4 @@
-pub fn part_one(input: &str) -> i16 {
+pub fn part_one(input: &str) -> isize {
     input
         .trim()
         .chars()
