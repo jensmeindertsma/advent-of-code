@@ -1,5 +1,6 @@
 mod direction;
 mod instruction;
+mod parsing;
 mod part_one;
 mod part_two;
 
