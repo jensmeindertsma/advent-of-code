@@ -6,8 +6,8 @@ const INPUT: &str = include_str!("../input.txt");
 fn main() {
     Puzzle {
         year: 2015,
-        day: 1,
-        name: "Not Quite Lisp",
+        day: 2,
+        name: "I Was Told There Would Be No Math",
         part_one,
         part_two,
     }

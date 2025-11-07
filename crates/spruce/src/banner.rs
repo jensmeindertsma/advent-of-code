@@ -9,7 +9,7 @@ pub enum Banner {
 
 impl fmt::Display for Banner {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        let (Width(width), _) = terminal_size().unwrap();
+        let (Width(width), _) = terminal_size().expect("terminal size should be available");
 
         match self {
             Self::Snowman => {
