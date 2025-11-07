@@ -27,7 +27,7 @@ I have taken the liberty to add several cool ASCII-art banners to the output fro
 | Day | Puzzle                                 | Part 1 | Part 2 |
 | --- | -------------------------------------- | ------ | ------ |
 | 1   | Not Quite Lisp                         | ✅     | ✅     |
-| 2   | I Was Told There Would Be No Math      | ❌     | ❌     |
+| 2   | I Was Told There Would Be No Math      | ✅     | ✅     |
 | 3   | Perfectly Spherical Houses in a Vacuum | ❌     | ❌     |
 | 4   | The Ideal Stocking Stuffer             | ❌     | ❌     |
 | 5   | Doesn't He Have Intern-Elves For This? | ❌     | ❌     |
