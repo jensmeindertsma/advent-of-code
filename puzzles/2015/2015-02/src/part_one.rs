@@ -4,13 +4,14 @@ pub fn part_one(input: &str) -> usize {
     input
         .trim()
         .lines()
-        .map(|line| {
-            let (_, present) = parsing::present(line).unwrap();
-            present
-        })
+        .map(|line| parsing::present(line).expect("parsing should succeed"))
         .map(|present| {
             let sides = present.sides().map(|s| s.area());
-            sides.iter().sum::<usize>() + sides.iter().min().unwrap()
+            sides.iter().sum::<usize>()
+                + sides
+                    .iter()
+                    .min()
+                    .expect("one of the sides should be the smallest")
         })
         .sum()
 }

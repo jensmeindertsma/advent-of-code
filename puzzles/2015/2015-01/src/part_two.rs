@@ -13,5 +13,5 @@ pub fn part_two(input: &str) -> usize {
         .enumerate()
         .find(|(_, floor)| floor.is_negative())
         .map(|(index, _)| index + 1)
-        .unwrap()
+        .expect("there should a negative character")
 }
