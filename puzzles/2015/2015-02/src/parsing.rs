@@ -1,32 +1,29 @@
-use crate::present::Present;
-use std::{error::Error, fmt::Display, num::ParseIntError};
+use crate::cuboid::Cuboid;
+use nom::{
+    Parser,
+    bytes::complete::tag,
+    character::complete::digit1,
+    combinator::{map, map_res},
+};
 
-pub fn present(input: &str) -> Result<Present, ParseError> {
-    let mut parts = input
-        .trim()
-        .split('x')
-        .map(|x| x.parse().map_err(ParseError::Dimension));
+pub fn parse(input: &str) -> Cuboid {
+    let (_, cuboid) = cuboid(input.trim()).expect("parsing valid input should never fail");
 
-    Ok(Present {
-        length: parts.next().ok_or(ParseError::Presence("length"))??,
-        width: parts.next().ok_or(ParseError::Presence("width"))??,
-        height: parts.next().ok_or(ParseError::Presence("height"))??,
-    })
+    cuboid
 }
 
-#[derive(Debug)]
-pub enum ParseError {
-    Dimension(ParseIntError),
-    Presence(&'static str),
-}
-
-impl Display for ParseError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            Self::Dimension(parse_error) => write!(f, "failed to parse dimension: {parse_error}"),
-            Self::Presence(dimension) => write!(f, "input missing `{dimension}` dimension"),
-        }
+fn cuboid(input: &str) -> nom::IResult<&str, Cuboid> {
+    fn size(input: &str) -> nom::IResult<&str, usize> {
+        map_res(digit1, |x: &str| x.parse()).parse(input)
     }
-}
 
-impl Error for ParseError {}
+    map(
+        (size, tag("x"), size, tag("x"), size),
+        |(length, _, width, _, height)| Cuboid {
+            length,
+            width,
+            height,
+        },
+    )
+    .parse(input)
+}
