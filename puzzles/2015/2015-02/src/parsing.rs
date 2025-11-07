@@ -1,22 +1,11 @@
 use crate::present::Present;
-use nom::{Parser, bytes::complete::tag, character::complete::digit1, combinator::map_res};
 
-pub fn present(input: &str) -> nom::IResult<&str, Present> {
-    fn dimension(input: &str) -> nom::IResult<&str, usize> {
-        map_res(digit1, |n: &str| n.parse()).parse(input)
+pub fn present(input: &str) -> Present {
+    let mut parts = input.trim().split("x").map(|x| x.parse().unwrap());
+
+    Present {
+        length: parts.next().unwrap(),
+        width: parts.next().unwrap(),
+        height: parts.next().unwrap(),
     }
-
-    eprintln!("`{input}`");
-
-    let (input, (length, _, width, _, height)) =
-        (dimension, tag("x"), dimension, tag("x"), dimension).parse(input)?;
-
-    Ok((
-        input,
-        Present {
-            length,
-            width,
-            height,
-        },
-    ))
 }
