@@ -14,43 +14,33 @@ pub fn part_two(input: &str) -> String {
 
     for line in input.trim().lines() {
         for character in line.chars() {
-            let (row, column) = position;
+            let (delta_row, delta_column) = match character {
+                'D' => (1, 0),
+                'U' => (-1, 0),
 
-            match character {
-                'D' => {
-                    if row == 4 || keypad[row + 1][column].is_none() {
-                        continue;
-                    } else {
-                        position = (row + 1, column)
-                    }
-                }
-                'U' => {
-                    if row == 0 || keypad[row - 1][column].is_none() {
-                        continue;
-                    } else {
-                        position = (row - 1, column)
-                    }
-                }
-                'L' => {
-                    if column == 0 || keypad[row][column - 1].is_none() {
-                        continue;
-                    } else {
-                        position = (row, column - 1)
-                    }
-                }
-                'R' => {
-                    if column == 4 || keypad[row][column + 1].is_none() {
-                        continue;
-                    } else {
-                        position = (row, column + 1)
-                    }
-                }
+                'L' => (0, -1),
+                'R' => (0, 1),
                 other => panic!("unexpected character `{other}`"),
             };
+
+            let (row, column) = position;
+
+            let new_row = row.saturating_add_signed(delta_row);
+            let new_column = column.saturating_add_signed(delta_column);
+
+            let within_bounds = (0..5).contains(&new_row) && (0..5).contains(&new_column);
+
+            if !within_bounds || keypad[new_row][new_column].is_none() {
+                continue;
+            }
+
+            position = (new_row, new_column)
         }
 
         let (row, column) = position;
-        code.push(keypad[row][column].unwrap());
+
+        code.push(keypad[row][column].expect("button should exist"));
+        println!("code is now {code}")
     }
 
     code

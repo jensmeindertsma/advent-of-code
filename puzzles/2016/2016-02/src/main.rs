@@ -7,7 +7,7 @@ fn main() {
     Puzzle {
         year: 2016,
         day: 2,
-        name: "The coolest puzzle template",
+        name: "Bathroom Security",
         part_one,
         part_two,
     }
