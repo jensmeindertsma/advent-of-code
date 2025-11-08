@@ -4,4 +4,5 @@ resolver = "3"
 members = ["crates/*", "puzzles/template", "puzzles/2015/*", "puzzles/2016/*"]
 
 [workspace.dependencies]
+indoc = "2.0.7"
 spruce = { path = "crates/spruce" }

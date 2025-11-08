@@ -57,7 +57,7 @@ I have taken the liberty to add several cool ASCII-art banners to the output fro
 | Day | Puzzle                                 | Part 1 | Part 2 |
 | --- | -------------------------------------- | ------ | ------ |
 | 1   | No Time for a Taxicab                  | ✅     | ✅     |
-| 2   | Bathroom Security                      | ❌     | ❌     |
+| 2   | Bathroom Security                      | ✅     | ✅     |
 | 3   | Squares With Three Sides               | ❌     | ❌     |
 | 4   | Security Through Obscurity             | ❌     | ❌     |
 | 5   | How About a Nice Game of Chess?        | ❌     | ❌     |
