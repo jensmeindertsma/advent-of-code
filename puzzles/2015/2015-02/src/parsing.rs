@@ -1,4 +1,4 @@
-use crate::cuboid::Cuboid;
+use crate::shared::Cuboid;
 use nom::{
     Parser,
     bytes::complete::tag,
