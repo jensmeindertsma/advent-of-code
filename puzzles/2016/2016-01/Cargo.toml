@@ -1,0 +1,8 @@
+[package]
+name = "puzzle-2016-01"
+version = "0.1.0"
+edition.workspace = true
+
+[dependencies]
+nom = "8.0.0"
+spruce.workspace = true
