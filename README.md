@@ -86,7 +86,7 @@ I have taken the liberty to add several cool ASCII-art banners to the output fro
 
 | Day | Puzzle                                  | Part 1 | Part 2 |
 | --- | --------------------------------------- | ------ | ------ |
-| 1   | Inverse Captcha                         | ❌     | ❌     |
+| 1   | Inverse Captcha                         | ✅     | ✅     |
 | 2   | Corruption Checksum                     | ❌     | ❌     |
 | 3   | Spiral Memory                           | ❌     | ❌     |
 | 4   | High-Entropy Passphrases                | ❌     | ❌     |
