@@ -11,8 +11,11 @@ pub fn part_two(input: &str) -> isize {
     let mut current_frequency = 0;
     let mut visited_frequencies = HashSet::new();
 
+    visited_frequencies.insert(current_frequency);
+
     for change in changes {
         current_frequency += change;
+
         let is_new = visited_frequencies.insert(current_frequency);
 
         if !is_new {
