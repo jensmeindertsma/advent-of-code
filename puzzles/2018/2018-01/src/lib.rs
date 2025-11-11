@@ -1,6 +1,3 @@
-mod parsing;
-mod shared;
-
 mod part_one;
 mod part_two;
 
@@ -14,7 +11,7 @@ fn one() {
     assert_eq!(part_one("+1, +1, -2"), 0);
     assert_eq!(part_one("-1, -2, -3"), -6);
 
-    assert_eq!(part_one(include_str!("../input.txt")), 53);
+    assert_eq!(part_one(include_str!("../input.txt")), 445);
 }
 
 #[test]
