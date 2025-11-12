@@ -9,11 +9,8 @@ pub fn part_one(input: &str) -> usize {
         let mut counter = HashMap::new();
 
         for character in characters {
-            println!("{line} -- {character}");
             *counter.entry(character).or_insert(0) += 1;
         }
-
-        println!("{:?}", counter);
 
         if counter.values().any(|v| *v == 2) {
             has_double += 1;

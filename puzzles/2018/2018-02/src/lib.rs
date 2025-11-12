@@ -38,8 +38,11 @@ fn two() {
             axcye
             wvxyz
     "}),
-        12
+        "fgij"
     );
 
-    //assert_eq!(part_two(include_str!("../input.txt")), 6);
+    assert_eq!(
+        part_two(include_str!("../input.txt")),
+        "xpysnnkqrbuhefmcajodplyzw"
+    );
 }
