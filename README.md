@@ -116,8 +116,8 @@ I have taken the liberty to add several cool ASCII-art banners to the output fro
 
 | Day | Puzzle                               | Part 1 | Part 2 |
 | --- | ------------------------------------ | ------ | ------ |
-| 1   | Chronal Calibration                  | ❌     | ❌     |
-| 2   | Inventory Management System          | ❌     | ❌     |
+| 1   | Chronal Calibration                  | ✅     | ✅     |
+| 2   | Inventory Management System          | ✅     | ✅     |
 | 3   | No Matter How You Slice It           | ❌     | ❌     |
 | 4   | Repose Record                        | ❌     | ❌     |
 | 5   | Alchemical Reduction                 | ❌     | ❌     |
