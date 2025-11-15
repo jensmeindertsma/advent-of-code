@@ -35,7 +35,5 @@ fn one() {
 
 #[test]
 fn two() {
-    assert_eq!(part_two("helloworld"), 0);
-
-    //assert_eq!(part_two(include_str!("../input.txt")), 6);
+    assert_eq!(part_two(include_str!("../input.txt")), 3892);
 }
