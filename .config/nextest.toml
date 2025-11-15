@@ -1,0 +1,5 @@
+[profile.default]
+final-status-level = "all"
+failure-output = "immediate"
+success-output = "never"
+fail-fast = false
