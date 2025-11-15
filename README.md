@@ -147,7 +147,7 @@ I have taken the liberty to add several cool ASCII-art banners to the output fro
 | Day | Puzzle                             | Part 1 | Part 2 |
 | --- | ---------------------------------- | ------ | ------ |
 | 1   | The Tyranny of the Rocket Equation | ✅     | ✅     |
-| 2   | 1202 Program Alarm                 | ❌     | ❌     |
+| 2   | 1202 Program Alarm                 | ✅     | ❌     |
 | 3   | Crossed Wires                      | ❌     | ❌     |
 | 4   | Secure Container                   | ❌     | ❌     |
 | 5   | Sunny with a Chance of Asteroids   | ❌     | ❌     |
