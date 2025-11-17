@@ -1,4 +1,5 @@
 [profile.default]
+status-level = "none"
 final-status-level = "all"
 failure-output = "immediate"
 success-output = "never"
