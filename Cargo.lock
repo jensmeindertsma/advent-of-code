@@ -279,6 +279,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2020-02"
+version = "0.1.0"
+dependencies = [
+ "indoc",
+ "nom",
+ "spruce",
+]
+
+[[package]]
 name = "puzzle-template"
 version = "0.1.0"
 dependencies = [
