@@ -9,6 +9,7 @@ members = [
     "puzzles/2017/*",
     "puzzles/2018/*",
     "puzzles/2019/*",
+    "puzzles/2020/*",
 ]
 
 [workspace.dependencies]
