@@ -41,5 +41,5 @@ fn two() {
         900
     );
 
-    // assert_eq!(part_two(include_str!("../input.txt")), ??);
+    assert_eq!(part_two(include_str!("../input.txt")), 1251263225);
 }
