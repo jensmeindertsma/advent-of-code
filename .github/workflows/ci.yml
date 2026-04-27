@@ -9,6 +9,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up Just command runner
+        uses: extractions/setup-crate@v2
+        with:
+          repo: casey/just
+
       - name: Setup Rust toolchain
         run: rustup toolchain install
 
@@ -22,7 +27,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Just command runner
-        uses: extractions/setup-just@v4
+        uses: extractions/setup-crate@v2
+        with:
+          repo: casey/just
 
       - name: Setup Rust toolchain
         run: rustup toolchain install
@@ -37,7 +44,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Just command runner
-        uses: extractions/setup-just@v4
+        uses: extractions/setup-crate@v2
+        with:
+          repo: casey/just
 
       - name: Setup Rust toolchain
         run: rustup toolchain install
