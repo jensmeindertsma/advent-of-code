@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Just command runner
-        uses: extractions/setup-just@v2
+        uses: extractions/setup-just@v4
 
       - name: Setup Rust toolchain
         run: rustup toolchain install
@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Just command runner
-        uses: extractions/setup-just@v2
+        uses: extractions/setup-just@v4
 
       - name: Setup Rust toolchain
         run: rustup toolchain install
@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Just command runner
-        uses: extractions/setup-just@v2
+        uses: extractions/setup-just@v4
 
       - name: Setup Rust toolchain
         run: rustup toolchain install
