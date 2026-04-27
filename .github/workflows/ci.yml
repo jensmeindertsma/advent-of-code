@@ -10,9 +10,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Just command runner
-        uses: extractions/setup-crate@v2
+        uses: baptiste0928/cargo-install@v3
         with:
-          repo: casey/just
+          crate: just
 
       - name: Setup Rust toolchain
         run: rustup toolchain install
@@ -27,9 +27,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Just command runner
-        uses: extractions/setup-crate@v2
+        uses: baptiste0928/cargo-install@v3
         with:
-          repo: casey/just
+          crate: just
 
       - name: Setup Rust toolchain
         run: rustup toolchain install
@@ -44,9 +44,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Just command runner
-        uses: extractions/setup-crate@v2
+        uses: baptiste0928/cargo-install@v3
         with:
-          repo: casey/just
+          crate: just
 
       - name: Setup Rust toolchain
         run: rustup toolchain install
