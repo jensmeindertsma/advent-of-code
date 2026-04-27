@@ -1,0 +1,6 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "puzzles/template"]
+
+[workspace.dependencies]
+spruce = { path = "crates/spruce" }
