@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["crates/*", "puzzles/template"]
+members = ["crates/*", "puzzles/template", "puzzles/2015/*"]
 
 [workspace.dependencies]
 spruce = { path = "crates/spruce" }
