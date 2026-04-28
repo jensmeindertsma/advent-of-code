@@ -1,0 +1,6 @@
+[package]
+name = "puzzle-2015-03"
+edition = "2024"
+
+[dependencies]
+spruce.workspace = true
