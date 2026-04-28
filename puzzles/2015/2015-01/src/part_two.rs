@@ -11,6 +11,6 @@ pub fn part_two(input: &str) -> usize {
             Some(*floor)
         })
         .position(|floor| floor < 0)
-        .unwrap()
+        .expect("a basement position should occur")
         + 1
 }
