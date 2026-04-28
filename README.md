@@ -9,7 +9,7 @@
 | Day | Puzzle Name                            | Part One | Part Two |
 | --- | -------------------------------------- | -------- | -------- |
 | 1   | Not Quite Lisp                         | ✅       | ✅       |
-| 2   | I Was Told There Would Be No Math      | ✅       |          |
+| 2   | I Was Told There Would Be No Math      | ✅       | ✅       |
 | 3   | Perfectly Spherical Houses in a Vacuum |          |          |
 | 4   | The Ideal Stocking Stuffer             |          |          |
 | 5   | Doesn't He Have Intern-Elves For This? |          |          |
