@@ -5,7 +5,7 @@ const INPUT: &str = include_str!("../input.txt");
 
 fn main() {
     Puzzle {
-        name: "Template",
+        name: "The Ideal Stocking Stuffer",
         year: 2015,
         day: 4,
     }
