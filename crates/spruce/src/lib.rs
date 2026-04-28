@@ -126,17 +126,13 @@ enum Part {
     PartTwo,
 }
 
-fn add_solution_row<Answer>(
-    part: Part,
-    table: &mut Table,
-    part_one: fn(&str) -> Answer,
-    input: &str,
-) where
+fn add_solution_row<Answer>(part: Part, table: &mut Table, solver: fn(&str) -> Answer, input: &str)
+where
     Answer: Display,
 {
     let now = Instant::now();
 
-    let solution = part_one(input);
+    let solution = solver(input);
 
     let duration = now.elapsed();
 
