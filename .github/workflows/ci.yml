@@ -14,7 +14,7 @@ jobs:
         with:
           crate: just
 
-      - name: Setup Rust toolchain
+      - name: Set up Rust toolchain
         run: rustup toolchain install
 
       - name: Check code
@@ -31,7 +31,7 @@ jobs:
         with:
           crate: just
 
-      - name: Setup Rust toolchain
+      - name: Set up Rust toolchain
         run: rustup toolchain install
 
       - name: Check formatting
@@ -48,7 +48,7 @@ jobs:
         with:
           crate: just
 
-      - name: Setup Rust toolchain
+      - name: Set up Rust toolchain
         run: rustup toolchain install
 
       - name: Install cargo-nextest
