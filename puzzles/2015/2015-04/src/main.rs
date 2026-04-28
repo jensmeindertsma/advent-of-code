@@ -1,0 +1,15 @@
+use puzzle_2015_04::{part_one, part_two};
+use spruce::Puzzle;
+
+const INPUT: &str = include_str!("../input.txt");
+
+fn main() {
+    Puzzle {
+        name: "The Ideal Stocking Stuffer",
+        year: 2015,
+        day: 4,
+    }
+    .part_one(part_one)
+    .part_two(part_two)
+    .solve(INPUT)
+}
