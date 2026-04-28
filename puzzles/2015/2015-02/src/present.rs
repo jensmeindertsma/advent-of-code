@@ -1,0 +1,66 @@
+use nom::Finish;
+
+pub struct Present {
+    length: u32,
+    width: u32,
+    height: u32,
+}
+
+impl Present {
+    pub fn sides(&self) -> [(u32, u32); 6] {
+        [
+            (self.length, self.width),
+            (self.length, self.width),
+            (self.width, self.height),
+            (self.width, self.height),
+            (self.height, self.length),
+            (self.height, self.length),
+        ]
+    }
+
+    pub fn surface_area(&self) -> u32 {
+        self.sides().iter().map(|(x, y)| x * y).sum()
+    }
+
+    pub fn volume(&self) -> u32 {
+        self.length * self.width * self.height
+    }
+}
+
+impl TryFrom<&str> for Present {
+    type Error = ();
+
+    fn try_from(value: &str) -> Result<Self, Self::Error> {
+        match parsing::present(value).finish() {
+            Ok((_, present)) => Ok(present),
+            Err(_) => Err(()),
+        }
+    }
+}
+
+mod parsing {
+    use super::Present;
+    use nom::{IResult, Parser, bytes, character, combinator};
+
+    pub fn present(input: &str) -> IResult<&str, Present> {
+        combinator::map(
+            (
+                dimension,
+                bytes::complete::tag("x"),
+                dimension,
+                bytes::complete::tag("x"),
+                dimension,
+            ),
+            |(length, _, width, _, height)| Present {
+                length,
+                width,
+                height,
+            },
+        )
+        .parse(input)
+    }
+
+    fn dimension(input: &str) -> IResult<&str, u32> {
+        combinator::map_res(character::complete::digit1, |s: &str| s.parse()).parse(input)
+    }
+}
