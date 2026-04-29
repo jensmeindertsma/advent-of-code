@@ -1,6 +1,6 @@
 use crate::present::Present;
 
-pub fn part_two(input: &str) -> u32 {
+pub fn part_two(input: &str) -> usize {
     input
         .lines()
         .map(Present::try_from)

@@ -17,7 +17,7 @@ fn one() {
 fn two() {
     assert_eq!(part_two("^v"), 3);
     assert_eq!(part_two("^>v<"), 3);
-    //assert_eq!(part_two("^v^v^v^v^v"), 11);
+    assert_eq!(part_two("^v^v^v^v^v"), 11);
 
-    // assert_eq!(part_two(include_str!("../input.txt")), 2631);
+    assert_eq!(part_two(include_str!("../input.txt")), 2631);
 }

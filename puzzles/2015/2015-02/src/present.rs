@@ -1,13 +1,13 @@
 use nom::Finish;
 
 pub struct Present {
-    length: u32,
-    width: u32,
-    height: u32,
+    length: usize,
+    width: usize,
+    height: usize,
 }
 
 impl Present {
-    pub fn sides(&self) -> [(u32, u32); 6] {
+    pub fn sides(&self) -> [(usize, usize); 6] {
         [
             (self.length, self.width),
             (self.length, self.width),
@@ -18,11 +18,11 @@ impl Present {
         ]
     }
 
-    pub fn surface_area(&self) -> u32 {
+    pub fn surface_area(&self) -> usize {
         self.sides().iter().map(|(x, y)| x * y).sum()
     }
 
-    pub fn volume(&self) -> u32 {
+    pub fn volume(&self) -> usize {
         self.length * self.width * self.height
     }
 }
@@ -60,7 +60,7 @@ mod parsing {
         .parse(input)
     }
 
-    fn dimension(input: &str) -> IResult<&str, u32> {
+    fn dimension(input: &str) -> IResult<&str, usize> {
         combinator::map_res(character::complete::digit1, |s: &str| s.parse()).parse(input)
     }
 }
