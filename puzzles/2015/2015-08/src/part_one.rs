@@ -2,11 +2,7 @@ pub fn part_one(input: &str) -> usize {
     input
         .trim()
         .lines()
-        .enumerate()
-        .map(|(n, line)| {
-            println!("----------------");
-            println!("line {n} `{line}` len {}", line.len());
-
+        .map(|line| {
             let literal_size = line.len();
 
             let mut memory_size = 0;
@@ -46,8 +42,6 @@ pub fn part_one(input: &str) -> usize {
                     other => panic!("unhandled character `{other}`"),
                 }
             }
-
-            println!("line {n} memory size = {memory_size} literal size = {literal_size}");
 
             literal_size - memory_size
         })
