@@ -51,5 +51,5 @@ fn one() {
 
 #[test]
 fn two() {
-    assert_eq!(part_one(include_str!("../input.txt")), 14_134);
+    assert_eq!(part_two(include_str!("../input.txt")), 14_134);
 }

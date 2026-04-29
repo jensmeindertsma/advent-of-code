@@ -4,13 +4,19 @@ use std::collections::HashMap;
 #[derive(Clone, Debug)]
 pub struct Circuit<'a> {
     parts: HashMap<Wire<'a>, Gate<'a>>,
+    state: HashMap<Wire<'a>, u16>,
 }
 
 impl<'a> Circuit<'a> {
     pub fn new() -> Self {
         Self {
             parts: HashMap::new(),
+            state: HashMap::new(),
         }
+    }
+
+    pub fn reset(&mut self) {
+        self.state.clear();
     }
 
     pub fn assemble(&mut self, instruction: Instruction<'a>) {
@@ -18,15 +24,18 @@ impl<'a> Circuit<'a> {
     }
 
     pub fn get_signal(&mut self, wire: Wire<'a>) -> u16 {
-        let gate = self
+        if let Some(&signal) = self.state.get(&wire) {
+            return signal;
+        }
+
+        let gate = *self
             .parts
-            .remove(&wire)
-            .expect("wire identifier  should be known in map");
+            .get(&wire)
+            .expect("all the wires should be in the circuit");
 
         let signal = gate.evaluate(self);
 
-        self.parts
-            .insert(wire, Gate::Connect(Source::Value(signal)));
+        self.state.insert(wire, signal);
 
         signal
     }

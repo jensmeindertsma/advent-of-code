@@ -16,11 +16,11 @@ pub fn part_two(input: &str) -> u16 {
         circuit.assemble(instruction);
     }
 
-    let mut second_circuit = circuit.clone();
-
     let signal = circuit.get_signal(Wire("a"));
 
-    second_circuit.set_signal(Wire("b"), Gate::Connect(Source::Value(signal)));
+    circuit.reset();
 
-    second_circuit.get_signal(Wire("a"))
+    circuit.set_signal(Wire("b"), Gate::Connect(Source::Value(signal)));
+
+    circuit.get_signal(Wire("a"))
 }
