@@ -1,7 +1,8 @@
+use itertools::Itertools;
 use std::collections::{HashMap, HashSet};
 
 pub fn part_one(input: &str) -> usize {
-    input
+    let (paths, cities) = input
         .trim()
         .lines()
         .map(parsing::description)
@@ -9,26 +10,6 @@ pub fn part_one(input: &str) -> usize {
         .fold(
             (HashMap::new(), HashSet::new()),
             |(mut paths, mut cities), (from, to, distance)| {
-                // TODO:: warn on duplicates? how to handle?
-
-                /*
-
-                2. ⚠️ Conflicting routes (important case)
-
-                these can be ignored because the input would be faulty
-                but  we should panic at the point where we'd insert a conflicting route
-                just like with a
-
-                London to Dublin = 464
-                London to Dublin = 500
-
-                Now you have a real ambiguity:
-
-                same key (London, Dublin)
-                different values
-
-                                 */
-
                 paths.insert((from, to), distance);
                 paths.insert((to, from), distance);
 
@@ -39,10 +20,25 @@ pub fn part_one(input: &str) -> usize {
             },
         );
 
-    // TODO: we have a list of all the places with routes.keys()
-    // Generate every ordering of those cities
-
-    todo!()
+    cities
+        .iter()
+        .permutations(cities.len())
+        .map(|route| {
+            // Vec has length of number of cities, so we need to do
+            // windows overlapping to sum the number of distances
+            route
+                .iter()
+                .tuple_windows()
+                .map(|(from, to)| {
+                    paths
+                        .get(&(from, to))
+                        .expect("every path should be present")
+                })
+                .map(|n| *n as usize)
+                .sum()
+        })
+        .min()
+        .expect("there should always be routes")
 }
 
 mod parsing {
