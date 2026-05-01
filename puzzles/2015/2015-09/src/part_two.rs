@@ -2,7 +2,7 @@ use crate::parsing;
 use itertools::Itertools;
 use std::collections::{HashMap, HashSet};
 
-pub fn part_one(input: &str) -> usize {
+pub fn part_two(input: &str) -> usize {
     let (paths, cities) = input
         .trim()
         .lines()
@@ -36,6 +36,6 @@ pub fn part_one(input: &str) -> usize {
                 .map(|n| *n as usize)
                 .sum()
         })
-        .min()
+        .max()
         .expect("there should always be routes")
 }
