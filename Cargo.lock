@@ -728,6 +728,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2015-11"
+version = "0.0.0"
+dependencies = [
+ "itertools 0.14.0",
+ "spruce",
+]
+
+[[package]]
 name = "puzzle-template"
 version = "0.0.0"
 dependencies = [
