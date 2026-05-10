@@ -6,16 +6,16 @@ use nom::{
     combinator::{map, map_res},
 };
 
-pub struct Ingredient<'a> {
-    name: &'a str,
-    pub capacity: i64,
-    pub durability: i64,
-    pub flavor: i64,
-    pub texture: i64,
-    pub calories: u64,
+#[derive(Clone, Copy, Debug)]
+pub struct Ingredient {
+    pub capacity: i32,
+    pub durability: i32,
+    pub flavor: i32,
+    pub texture: i32,
+    pub calories: u32,
 }
 
-pub fn ingredient(input: &str) -> Option<Ingredient<'_>> {
+pub fn ingredient(input: &str) -> Option<Ingredient> {
     map(
         (
             alpha1,
@@ -30,8 +30,7 @@ pub fn ingredient(input: &str) -> Option<Ingredient<'_>> {
             tag(", calories "),
             calories,
         ),
-        |(name, _, capacity, _, durability, _, flavor, _, texture, _, calories)| Ingredient {
-            name,
+        |(_, _, capacity, _, durability, _, flavor, _, texture, _, calories)| Ingredient {
             capacity,
             durability,
             flavor,
@@ -44,10 +43,10 @@ pub fn ingredient(input: &str) -> Option<Ingredient<'_>> {
     .ok()
 }
 
-fn property(input: &str) -> nom::IResult<&str, i64> {
+fn property(input: &str) -> nom::IResult<&str, i32> {
     alt((
         map(
-            (tag("-"), map_res(digit1, |s: &str| s.parse::<i64>())),
+            (tag("-"), map_res(digit1, |s: &str| s.parse::<i32>())),
             |(_, n)| -n,
         ),
         map_res(digit1, |s: &str| s.parse()),
@@ -55,6 +54,6 @@ fn property(input: &str) -> nom::IResult<&str, i64> {
     .parse(input)
 }
 
-fn calories(input: &str) -> nom::IResult<&str, u64> {
+fn calories(input: &str) -> nom::IResult<&str, u32> {
     map_res(digit1, |s: &str| s.parse()).parse(input)
 }

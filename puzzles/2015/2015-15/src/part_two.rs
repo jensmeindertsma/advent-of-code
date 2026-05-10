@@ -1,14 +1,14 @@
 use crate::parsing;
 use itertools::Itertools;
 
-pub fn part_one(input: &str) -> u32 {
+pub fn part_two(input: &str) -> u32 {
     input
         .trim()
         .lines()
         .map(parsing::ingredient)
         .map(|result| result.expect("each line should have a valid cookie description"))
         .combinations_with_replacement(100)
-        .map(|ingredients| {
+        .filter_map(|ingredients| {
             let capacity: u32 = ingredients
                 .iter()
                 .map(|ingredient| ingredient.capacity)
@@ -33,7 +33,16 @@ pub fn part_one(input: &str) -> u32 {
                 .sum::<i32>()
                 .max(0) as u32;
 
-            capacity * durability * flavor * texture
+            let calories: u32 = ingredients
+                .iter()
+                .map(|ingredient| ingredient.calories)
+                .sum();
+
+            if calories == 500 {
+                Some(capacity * durability * flavor * texture)
+            } else {
+                None
+            }
         })
         .max()
         .expect("there should be a winning cookie")
