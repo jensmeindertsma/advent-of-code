@@ -1,0 +1,14 @@
+[package]
+name = "puzzle-2015-04"
+edition = "2024"
+
+[dependencies]
+md-5 = "0.11.0"
+spruce.workspace = true
+
+[dev-dependencies]
+criterion = "0.8.2"
+
+[[bench]]
+name = "hash"
+harness = false
