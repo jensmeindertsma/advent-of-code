@@ -19,7 +19,7 @@
 | 9   | All in a Single Night                  | ✅       | ✅       |
 | 10  | Elves Look, Elves Say                  | ✅       | ✅       |
 | 11  | Corporate Policy                       | ✅       | ✅       |
-| 12  | JSAbacusFramework.io                   |          |          |
+| 12  | JSAbacusFramework.io                   | ✅       | ✅       |
 | 13  | Knights of the Dinner Table            |          |          |
 | 14  | Reindeer Olympics                      |          |          |
 | 15  | Science for Hungry People              |          |          |
