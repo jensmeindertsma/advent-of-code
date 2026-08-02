@@ -13,7 +13,7 @@
 | 3   | Perfectly Spherical Houses in a Vacuum | ✅       | ✅       |
 | 4   | The Ideal Stocking Stuffer             | ✅       | ✅       |
 | 5   | Doesn't He Have Intern-Elves For This? | ✅       | ✅       |
-| 6   | Probably a Fire Hazard                 |          |          |
+| 6   | Probably a Fire Hazard                 | ✅       | ✅       |
 | 7   | Some Assembly Required                 |          |          |
 | 8   | Matchsticks                            |          |          |
 | 9   | All in a Single Night                  |          |          |
