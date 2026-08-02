@@ -23,7 +23,7 @@
 | 13  | Knights of the Dinner Table            | ✅       | ✅       |
 | 14  | Reindeer Olympics                      | ✅       | ✅       |
 | 15  | Science for Hungry People              | ✅       | ✅       |
-| 16  | Aunt Sue                               |          |          |
+| 16  | Aunt Sue                               | ✅       | ✅       |
 | 17  | No Such Thing as Too Much              |          |          |
 | 18  | Like a GIF For Your Yard               |          |          |
 | 19  | Medicine for Rudolph                   |          |          |
