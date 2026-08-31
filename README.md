@@ -16,3 +16,4 @@
 | 6   | Probably a Fire Hazard                 | ✅       | ✅       |
 | 7   | Some Assembly Required                 | ✅       | ✅       |
 | 8   | Matchsticks                            | ✅       | ✅       |
+| 9   | All in a Single Night                  | ✅       | ✅       |
