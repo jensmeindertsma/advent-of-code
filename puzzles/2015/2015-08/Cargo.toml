@@ -1,0 +1,7 @@
+[package]
+name = "puzzle-2015-08"
+edition = "2024"
+
+[dependencies]
+indoc = "2.0.7"
+spruce.workspace = true
