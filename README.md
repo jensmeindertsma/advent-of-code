@@ -33,3 +33,33 @@
 | 23  | Opening the Turing Lock                |          |          |
 | 24  | It Hangs in the Balance                |          |          |
 | 25  | Let It Snow                            |          |          |
+
+## 2016
+
+| Day | Puzzle Name                            | Part One | Part Two |
+| --- | -------------------------------------- | -------- | -------- |
+| 1   | No Time for a Taxicab                  |          |          |
+| 2   | Bathroom Security                      |          |          |
+| 3   | Squares With Three Sides               |          |          |
+| 4   | Security Through Obscurity             |          |          |
+| 5   | How About a Nice Game of Chess?        |          |          |
+| 6   | Signals and Noise                      |          |          |
+| 7   | Internet Protocol Version 7            |          |          |
+| 8   | Two-Factor Authentication              |          |          |
+| 9   | Explosives in Cyberspace               |          |          |
+| 10  | Balance Bots                           |          |          |
+| 11  | Radioisotope Thermoelectric Generators |          |          |
+| 12  | Leonardo's Monorail                    |          |          |
+| 13  | A Maze of Twisty Little Cubicles       |          |          |
+| 14  | One-Time Pad                           |          |          |
+| 15  | Timing is Everything                   |          |          |
+| 16  | Dragon Checksum                        |          |          |
+| 17  | Two Steps Forward                      |          |          |
+| 18  | Like a Rogue                           |          |          |
+| 19  | An Elephant Named Joseph               |          |          |
+| 20  | Firewall Rules                         |          |          |
+| 21  | Scrambled Letters and Hash             |          |          |
+| 22  | Grid Computing                         |          |          |
+| 23  | Safe Cracking                          |          |          |
+| 24  | Air Duct Spelunking                    |          |          |
+| 25  | Clock Signal                           |          |          |
