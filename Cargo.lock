@@ -716,6 +716,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2016-01"
+version = "0.0.0"
+dependencies = [
+ "spruce",
+]
+
+[[package]]
 name = "puzzle-template"
 version = "0.0.0"
 dependencies = [
