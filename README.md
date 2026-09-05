@@ -19,3 +19,4 @@
 | 9   | All in a Single Night                  | ✅       | ✅       |
 | 10  | Elves Look, Elves Say                  | ✅       | ✅       |
 | 11  | Corporate Policy                       | ✅       | ✅       |
+| 12  | JSAbacusFramework.io                   | ✅       | ✅       |
