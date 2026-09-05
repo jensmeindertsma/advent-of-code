@@ -699,6 +699,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2015-17"
+version = "0.0.0"
+dependencies = [
+ "indoc",
+ "itertools 0.14.0",
+ "spruce",
+]
+
+[[package]]
 name = "puzzle-template"
 version = "0.0.0"
 dependencies = [
