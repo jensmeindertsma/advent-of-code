@@ -1,3 +1,5 @@
+use crate::navigation::{Direction, Heading};
+
 pub fn part_one(input: &str) -> usize {
     let (_, (x, y)) = input
         .trim()
@@ -31,37 +33,4 @@ pub fn part_one(input: &str) -> usize {
         );
 
     (x.abs() + y.abs()) as usize
-}
-
-#[derive(Clone, Copy, Debug)]
-enum Direction {
-    Left,
-    Right,
-}
-
-#[derive(Clone, Copy, Debug)]
-enum Heading {
-    North,
-    East,
-    South,
-    West,
-}
-
-impl Heading {
-    fn turn(self, direction: Direction) -> Self {
-        match direction {
-            Direction::Left => match self {
-                Heading::North => Heading::West,
-                Heading::West => Heading::South,
-                Heading::South => Heading::East,
-                Heading::East => Heading::North,
-            },
-            Direction::Right => match self {
-                Heading::North => Heading::East,
-                Heading::East => Heading::South,
-                Heading::South => Heading::West,
-                Heading::West => Heading::North,
-            },
-        }
-    }
 }
