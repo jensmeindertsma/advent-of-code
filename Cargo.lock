@@ -726,6 +726,7 @@ dependencies = [
 name = "puzzle-2016-02"
 version = "0.0.0"
 dependencies = [
+ "indoc",
  "spruce",
 ]
 

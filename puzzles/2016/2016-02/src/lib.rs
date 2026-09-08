@@ -4,7 +4,17 @@ pub use part_one::part_one;
 
 #[test]
 fn one() {
-    assert_eq!(part_one("R2, L3"), 5);
+    use indoc::indoc;
 
-    assert_eq!(part_one(include_str!("../input.txt")), 56855);
+    assert_eq!(
+        part_one(indoc! {"
+            ULL
+            RRDDD
+            LURDL
+            UUUUD
+        "}),
+        "1985"
+    );
+
+    assert_eq!(part_one(include_str!("../input.txt")), "56855");
 }
