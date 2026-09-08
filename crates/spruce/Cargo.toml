@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-comfy-table = "7.2.2"
-owo-colors = "4.3.0"
+comfy-table = "8.0.0"
+owo-colors = "4.4.0"
 rand = "0.10.2"
 terminal_size = "0.4.4"

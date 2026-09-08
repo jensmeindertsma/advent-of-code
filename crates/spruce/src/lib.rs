@@ -1,7 +1,7 @@
 mod banner;
 
 use banner::Banner;
-use comfy_table::{Attribute, Cell, Color, Table};
+use comfy_table::{Attribute, Cell, Color, ContentLineStyle, LineStyle, Table, TableStyle};
 use owo_colors::OwoColorize;
 use rand::seq::IndexedRandom;
 use std::{
@@ -112,7 +112,15 @@ fn print_message(puzzle: &Puzzle) {
 fn create_table() -> Table {
     let mut table = Table::new();
 
-    table.load_preset("││──├─┼┤│─┼├┤┬┴┌┐└┘");
+    table.load_style(
+        TableStyle::new()
+            //││──├─┼┤│─┼├┤┬┴┌┐└┘
+            .top_border(LineStyle::new('┌', '─', '┬', '┐'))
+            .header_lines(ContentLineStyle::new('│', '│', '│'))
+            .header_separator(LineStyle::new('├', '─', '┼', '┤'))
+            .content_lines(ContentLineStyle::new('│', '│', '│'))
+            .bottom_border(LineStyle::new('└', '─', '┴', '┘')),
+    );
 
     table.set_header(vec![
         Cell::new("Puzzle").add_attribute(Attribute::Bold),
