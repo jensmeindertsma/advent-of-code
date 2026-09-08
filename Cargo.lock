@@ -146,9 +146,9 @@ checksum = "c8d4a3bb8b1e0c1050499d1815f5ab16d04f0959b233085fb31653fbfc9d98f9"
 
 [[package]]
 name = "comfy-table"
-version = "7.2.2"
+version = "8.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "958c5d6ecf1f214b4c2bbbbf6ab9523a864bd136dcf71a7e8904799acfe1ad47"
+checksum = "136c8c4c3823846e8ba6d4bda011b4e5d5827b8bb0ac26c31f9ab31abe9f54f2"
 dependencies = [
  "crossterm",
  "unicode-segmentation",
@@ -386,9 +386,9 @@ dependencies = [
 
 [[package]]
 name = "itertools"
-version = "0.14.0"
+version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2b192c782037fadd9cfa75548310488aabdbf3d2da73885b31bd0abd03351285"
+checksum = "8b4baf93f58d4425749ca49a51c50ebab072c5df6994d08fed93541c331481dc"
 dependencies = [
  "either",
 ]
@@ -633,7 +633,7 @@ name = "puzzle-2015-09"
 version = "0.0.0"
 dependencies = [
  "indoc",
- "itertools 0.14.0",
+ "itertools 0.15.0",
  "nom",
  "spruce",
 ]
@@ -649,7 +649,7 @@ dependencies = [
 name = "puzzle-2015-11"
 version = "0.0.0"
 dependencies = [
- "itertools 0.14.0",
+ "itertools 0.15.0",
  "spruce",
 ]
 
@@ -666,7 +666,7 @@ name = "puzzle-2015-13"
 version = "0.0.0"
 dependencies = [
  "indoc",
- "itertools 0.14.0",
+ "itertools 0.15.0",
  "nom",
  "spruce",
 ]
@@ -685,7 +685,7 @@ name = "puzzle-2015-15"
 version = "0.0.0"
 dependencies = [
  "indoc",
- "itertools 0.14.0",
+ "itertools 0.15.0",
  "nom",
  "spruce",
 ]
@@ -703,7 +703,7 @@ name = "puzzle-2015-17"
 version = "0.0.0"
 dependencies = [
  "indoc",
- "itertools 0.14.0",
+ "itertools 0.15.0",
  "spruce",
 ]
 
@@ -887,7 +887,7 @@ checksum = "e7a5d71263a5a7d47b41f6b3f06ba276f10cc18b0931f1799f710578e2309348"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 3.0.4",
+ "syn 3.0.5",
 ]
 
 [[package]]
@@ -917,9 +917,9 @@ checksum = "0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5"
 
 [[package]]
 name = "smallvec"
-version = "1.15.2"
+version = "1.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ed6a63f02c8539c91a8685a86f4099661ba3da017932f6ebbea6de3f0fa7c90"
+checksum = "b9be42f50aa861c555654aa3a37f52f4b1074bacf4e48fe0ef7fa584e80f1f0f"
 
 [[package]]
 name = "spruce"
@@ -944,9 +944,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "3.0.4"
+version = "3.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6275cddf4610d1775e6d1fe9469b2e77d0f39fd98fb7450901b821e0c53649f"
+checksum = "12df2e0110f65b775f769bb17ef989067a1d931b2eb822bd4346631eeada89f9"
 dependencies = [
  "proc-macro2",
  "quote",
