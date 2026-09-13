@@ -14,11 +14,6 @@ pub fn part_two(input: &str) -> String {
 
     for line in input.trim().lines() {
         for character in line.chars() {
-            println!(
-                "{character} row {row} col {column}, {:?}",
-                keypad[row][column]
-            );
-
             match character {
                 'U' => {
                     if let Some(key) = keypad.get(row - 1)
@@ -51,11 +46,6 @@ pub fn part_two(input: &str) -> String {
                 _ => panic!("Unexpected character"),
             }
         }
-
-        println!(
-            "line end {:?}",
-            keypad.get(row).and_then(|row| row.get(column))
-        );
 
         code.push(keypad[row][column].expect("every line should end at a button"));
     }
