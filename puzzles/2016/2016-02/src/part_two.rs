@@ -1,10 +1,10 @@
 pub fn part_two(input: &str) -> String {
     let keypad = [
-        vec!['1'],
-        vec!['2', '3', '4'],
-        vec!['5', '6', '7', '8', '9'],
-        vec!['A', 'B', 'C'],
-        vec!['D'],
+        vec![None, None, Some('1'), None, None],
+        vec![None, Some('2'), Some('3'), Some('4'), None],
+        vec![Some('5'), Some('6'), Some('7'), Some('8'), Some('9')],
+        vec![None, Some('A'), Some('B'), Some('C'), None],
+        vec![None, None, Some('D'), None, None],
     ];
 
     let mut row: usize = 2;
@@ -14,24 +14,50 @@ pub fn part_two(input: &str) -> String {
 
     for line in input.trim().lines() {
         for character in line.chars() {
+            println!(
+                "{character} row {row} col {column}, {:?}",
+                keypad[row][column]
+            );
+
             match character {
-                'U' => row = row.saturating_sub(1),
-                'D' => {
-                    if row < keypad[column].len() - 1 {
-                        row = row.saturating_add(1)
+                'U' => {
+                    if let Some(key) = keypad.get(row - 1)
+                        && key[column].is_some()
+                    {
+                        row -= 1
                     }
                 }
-                'L' => column = column.saturating_sub(1),
+                'D' => {
+                    if let Some(key) = keypad.get(row + 1)
+                        && key[column].is_some()
+                    {
+                        row += 1
+                    }
+                }
+                'L' => {
+                    if let Some(key) = keypad.get(row).and_then(|row| row.get(column - 1))
+                        && key.is_some()
+                    {
+                        column -= 1
+                    }
+                }
                 'R' => {
-                    if column < keypad.len() - 1 {
-                        column = column.saturating_add(1)
+                    if let Some(key) = keypad.get(row).and_then(|row| row.get(column + 1))
+                        && key.is_some()
+                    {
+                        column += 1
                     }
                 }
                 _ => panic!("Unexpected character"),
             }
         }
 
-        code.push(keypad[row][column]);
+        println!(
+            "line end {:?}",
+            keypad.get(row).and_then(|row| row.get(column))
+        );
+
+        code.push(keypad[row][column].expect("every line should end at a button"));
     }
 
     code

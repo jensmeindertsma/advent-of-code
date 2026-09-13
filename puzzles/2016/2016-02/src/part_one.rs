@@ -10,17 +10,9 @@ pub fn part_one(input: &str) -> String {
         for character in line.chars() {
             match character {
                 'U' => row = row.saturating_sub(1),
-                'D' => {
-                    if row < keypad[column].len() - 1 {
-                        row = row.saturating_add(1)
-                    }
-                }
+                'D' => row = (row + 1).min(keypad.len() - 1),
                 'L' => column = column.saturating_sub(1),
-                'R' => {
-                    if column < keypad.len() - 1 {
-                        column = column.saturating_add(1)
-                    }
-                }
+                'R' => column = (column + 1).min(keypad[row].len() - 1),
                 _ => panic!("Unexpected character"),
             }
         }
