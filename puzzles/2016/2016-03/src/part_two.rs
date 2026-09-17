@@ -10,11 +10,15 @@ pub fn part_two(input: &str) -> usize {
                 .map(|value| value.trim().parse::<u16>().unwrap())
                 .collect();
 
-            [sides[0], sides[1], sides[2]]
+            sides
+        })
+        .tuples::<(Vec<u16>, Vec<u16>, Vec<u16>)>()
+        .flat_map(|(a, b, c)| (0..3).map(move |i| (a[i], b[i], c[i])))
+        .filter(|(a, b, c)| {
+            [a, b, c]
                 .iter()
                 .permutations(3)
-                .all(|sides| sides[0] + sides[1] > *sides[2])
+                .all(|sides| *sides[0] + *sides[1] > **sides[2])
         })
-        .filter(|possible| *possible)
         .count()
 }
