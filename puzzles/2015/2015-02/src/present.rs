@@ -1,4 +1,5 @@
 use nom::Finish;
+use std::str::FromStr;
 
 pub struct Present {
     length: usize,
@@ -27,10 +28,10 @@ impl Present {
     }
 }
 
-impl TryFrom<&str> for Present {
-    type Error = ();
+impl FromStr for Present {
+    type Err = ();
 
-    fn try_from(value: &str) -> Result<Self, Self::Error> {
+    fn from_str(value: &str) -> Result<Self, Self::Err> {
         match parsing::present(value).finish() {
             Ok((_, present)) => Ok(present),
             Err(_) => Err(()),

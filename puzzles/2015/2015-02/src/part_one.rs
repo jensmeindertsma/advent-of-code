@@ -1,9 +1,11 @@
+use std::str::FromStr;
+
 use crate::present::Present;
 
 pub fn part_one(input: &str) -> usize {
     input
         .lines()
-        .map(Present::try_from)
+        .map(Present::from_str)
         .map(|result| result.expect("dimensions should always be valid"))
         .map(|present| {
             present.surface_area()

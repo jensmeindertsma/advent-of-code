@@ -3,7 +3,9 @@ name = "puzzle-2015-09"
 edition = "2024"
 
 [dependencies]
-indoc = "2.0.7"
 itertools = "0.15.0"
 nom = "8.0.0"
 spruce.workspace = true
+
+[dev-dependencies]
+indoc = "2.0.8"
