@@ -41,7 +41,7 @@
 | 1   | No Time for a Taxicab                  | ✅       | ✅       |
 | 2   | Bathroom Security                      | ✅       | ✅       |
 | 3   | Squares With Three Sides               | ✅       | ✅       |
-| 4   | Security Through Obscurity             |          |          |
+| 4   | Security Through Obscurity             | ✅       | ✅       |
 | 5   | How About a Nice Game of Chess?        |          |          |
 | 6   | Signals and Noise                      |          |          |
 | 7   | Internet Protocol Version 7            |          |          |
