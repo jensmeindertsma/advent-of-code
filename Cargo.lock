@@ -710,6 +710,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle-2015-19"
+version = "0.0.0"
+dependencies = [
+ "indoc",
+ "spruce",
+]
+
+[[package]]
 name = "puzzle-2016-01"
 version = "0.0.0"
 dependencies = [
