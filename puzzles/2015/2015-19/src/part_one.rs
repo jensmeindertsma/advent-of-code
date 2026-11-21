@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 pub fn part_one(input: &str) -> usize {
     let (replacements, molecule) = input.trim().split_once("\n\n").unwrap();
@@ -11,9 +11,26 @@ pub fn part_one(input: &str) -> usize {
             map
         });
 
-    println!("{replacements:#?}");
+    dbg!(&replacements);
 
-    println!("`{molecule}`");
+    dbg!(molecule);
 
-    1
+    let mut atoms: Vec<&str> = Vec::new();
+
+    // TODO: split molecule into atoms
+
+    let mut distinct = HashSet::new();
+
+    for (start, ends) in replacements {
+        for end in ends {
+            // TODO: iterate through atoms, replacing each item
+            // with every replacement, pushing the result into
+            // distinct.
+
+            let new_molecule = String::new();
+            distinct.insert(new_molecule);
+        }
+    }
+
+    distinct.len()
 }
