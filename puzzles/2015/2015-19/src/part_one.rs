@@ -6,29 +6,22 @@ pub fn part_one(input: &str) -> usize {
     let replacements = replacements
         .lines()
         .map(|line| line.split_once(" => ").unwrap())
-        .fold(HashMap::new(), |mut map, (start, end)| {
-            map.entry(start).or_insert(Vec::new()).push(end);
+        .fold(HashMap::new(), |mut map, (from, to)| {
+            map.entry(from).or_insert(Vec::new()).push(to);
             map
         });
 
-    dbg!(&replacements);
-
-    dbg!(molecule);
-
-    let mut atoms: Vec<&str> = Vec::new();
-
-    // TODO: split molecule into atoms
-
     let mut distinct = HashSet::new();
 
-    for (start, ends) in replacements {
-        for end in ends {
-            // TODO: iterate through atoms, replacing each item
-            // with every replacement, pushing the result into
-            // distinct.
+    for (from, ends) in replacements {
+        for to in ends {
+            for (index, _) in molecule.match_indices(from) {
+                let prefix = &molecule[..index];
+                let suffix = &molecule[index + from.len()..];
+                let new_molecule = format!("{prefix}{to}{suffix}");
 
-            let new_molecule = String::new();
-            distinct.insert(new_molecule);
+                distinct.insert(new_molecule);
+            }
         }
     }
 

@@ -19,18 +19,18 @@ fn one() {
         4
     );
 
-    // assert_eq!(
-    //     part_one(indoc! {"
-    //         H => HO
-    //         H => OH
-    //         O => HH
+    assert_eq!(
+        part_one(indoc! {"
+            H => HO
+            H => OH
+            O => HH
 
-    //         HOHOHO
-    // "}),
-    //     7
-    // );
+            HOHOHO
+    "}),
+        7
+    );
 
-    // assert_eq!(part_one(include_str!("../input.txt")), 576);
+    assert_eq!(part_one(include_str!("../input.txt")), 576);
 }
 
 // #[test]
