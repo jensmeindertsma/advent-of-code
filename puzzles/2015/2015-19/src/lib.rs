@@ -38,7 +38,7 @@ fn two() {
     use indoc::indoc;
 
     assert_eq!(
-        part_one(indoc! {"
+        part_two(indoc! {"
             e => H
             e => O
             H => HO
@@ -51,7 +51,7 @@ fn two() {
     );
 
     assert_eq!(
-        part_one(indoc! {"
+        part_two(indoc! {"
             e => H
             e => O
             H => HO
